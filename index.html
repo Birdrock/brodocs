@@ -12,70 +12,555 @@
 </head>
 <body>
 <div id="wrapper">
-<div id="sidebar-wrapper" class="side-nav"><ul class="sidebar-nav"><li class="nav-level-1"><a " href="#an-exhibit-of-markdown">An exhibit of Markdown</a></li><li class="nav-level-2"><a " href="#basic-formatting">Basic formatting</a></li><li class="nav-level-2"><a " href="#lists">Lists</a></li><li class="nav-level-3"><a " href="#ordered-list">Ordered list</a></li><li class="nav-level-3"><a " href="#unordered-list">Unordered list</a></li><li class="nav-level-2"><a " href="#paragraph-modifiers">Paragraph modifiers</a></li><li class="nav-level-3"><a " href="#code-block">Code block</a></li><li class="nav-level-3"><a " href="#quote">Quote</a></li><li class="nav-level-2"><a " href="#headings">Headings</a></li><li class="nav-level-3"><a " href="#headings-can-also-contain-formatting-">Headings <em>can</em> also contain <strong>formatting</strong></a></li><li class="nav-level-3"><a " href="#they-can-even-contain-inline-code-">They can even contain <code>inline code</code></a></li><li class="nav-level-2"><a " href="#urls">URLs</a></li><li class="nav-level-2"><a " href="#horizontal-rule">Horizontal rule</a></li><li class="nav-level-2"><a " href="#images">Images</a></li><li class="nav-level-2"><a " href="#finally">Finally</a></li><li class="nav-level-1"><a " href="#heading-1">Heading 1</a></li><li class="nav-level-2"><a " href="#heading-2">Heading 2</a></li><li class="nav-level-3"><a " href="#heading-3">Heading 3</a></li></ul></div>
-<div id="page-content-wrapper" class="body-content"><div class="container-fluid"><h1 id="an-exhibit-of-markdown">An exhibit of Markdown</h1>
-<p>This note demonstrates some of what <a href="http://daringfireball.net/projects/markdown/">Markdown</a> is capable of doing.</p>
-<p><em>Note: Feel free to play with this page. Unlike regular notes, this doesn&#39;t automatically save itself.</em></p>
-<h2 id="basic-formatting">Basic formatting</h2>
-<p>Paragraphs can be written like so. A paragraph is the basic block of Markdown. A paragraph is what text will turn into when there is no reason it should become anything else.</p>
-<p>Paragraphs must be separated by a blank line. Basic formatting of <em>italics</em> and <strong>bold</strong> is supported. This <em>can be <strong>nested</strong> like</em> so.</p>
-<h2 id="lists">Lists</h2>
-<h3 id="ordered-list">Ordered list</h3>
-<ol>
-<li>Item 1</li>
-<li>A second item</li>
-<li>Number 3</li>
-<li>Ⅳ</li>
-</ol>
-<p><em>Note: the fourth item uses the Unicode character for <a href="http://www.fileformat.info/info/unicode/char/2163/index.htm">Roman numeral four</a>.</em></p>
-<h3 id="unordered-list">Unordered list</h3>
-<ul>
-<li>An item</li>
-<li>Another item</li>
-<li>Yet another item</li>
-<li>And there&#39;s more...</li>
-</ul>
-<h2 id="paragraph-modifiers">Paragraph modifiers</h2>
-<h3 id="code-block">Code block</h3>
-<pre class="code-block"><code class="generic">Code blocks are very useful <span class="hljs-keyword">for</span> developers <span class="hljs-keyword">and</span> other people who look <span class="hljs-keyword">at</span> code <span class="hljs-keyword">or</span> other things <span class="hljs-keyword">that</span> are written <span class="hljs-keyword">in</span> plain <span class="hljs-built_in">text</span>. As you can see, <span class="hljs-keyword">it</span> uses a fixed-width font.
-</code></pre><p>You can also make <code>inline code</code> to add code into other things.</p>
-<h3 id="quote">Quote</h3>
-<blockquote>
-<p>Here is a quote. What this is should be self explanatory. Quotes are automatically indented when they are used.</p>
+<div id="sidebar-wrapper" class="side-nav"><ul class="sidebar-nav"><li class="nav-level-1"><a href="#deployment-v1beta1" class="nav-item">Deployment v1beta1</a></li><li class="nav-level-3"><a href="#deploymentspec-v1beta1" class="nav-item">DeploymentSpec v1beta1</a></li><li class="nav-level-3"><a href="#deploymentstatus-v1beta1" class="nav-item">DeploymentStatus v1beta1</a></li><li class="nav-level-2"><a href="#write-operations" class="nav-item">Write Operations</a></li><li class="nav-level-2"><a href="#create" class="nav-item">Create</a></li><li class="nav-level-3"><a href="#http-request" class="nav-item">HTTP Request</a></li><li class="nav-level-3"><a href="#path-parameters" class="nav-item">Path Parameters</a></li><li class="nav-level-3"><a href="#query-parameters" class="nav-item">Query Parameters</a></li><li class="nav-level-3"><a href="#response" class="nav-item">Response</a></li><li class="nav-level-2"><a href="#replace" class="nav-item">Replace</a></li><li class="nav-level-3"><a href="#http-request" class="nav-item">HTTP Request</a></li><li class="nav-level-3"><a href="#path-parameters" class="nav-item">Path Parameters</a></li><li class="nav-level-3"><a href="#query-parameters" class="nav-item">Query Parameters</a></li><li class="nav-level-3"><a href="#response" class="nav-item">Response</a></li></ul></div>
+<div id="page-content-wrapper" class="body-content container-fluid"><h1 id="deployment-v1beta1">Deployment v1beta1</h1>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Version</th>
+<th>Kind</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Extensions</td>
+<td>v1beta1</td>
+<td>Deployment</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="code-block kubectl">
+<p> Deployment Config to run 3 nginx instances (max rollback set to 10 revisions).</p>
 </blockquote>
-<h2 id="headings">Headings</h2>
-<p>There are six levels of headings. They correspond with the six levels of HTML headings. You&#39;ve probably noticed them already in the page. Each level down uses one more hash character.</p>
-<h3 id="headings-can-also-contain-formatting-">Headings <em>can</em> also contain <strong>formatting</strong></h3>
-<h3 id="they-can-even-contain-inline-code-">They can even contain <code>inline code</code></h3>
-<p>Of course, demonstrating what headings look like messes up the structure of the page.</p>
-<p>I don&#39;t recommend using more than three or four levels of headings here, because, when you&#39;re smallest heading isn&#39;t too small, and you&#39;re largest heading isn&#39;t too big, and you want each size up to look noticeably larger and more important, there there are only so many sizes that you can use.</p>
-<h2 id="urls">URLs</h2>
-<p>URLs can be made in a handful of ways:</p>
-<ul>
-<li>A named link to <a href="http://www.markitdown.net/">MarkItDown</a>. The easiest way to do these is to select what you want to make a link and hit <code>Ctrl+L</code>.</li>
-<li>Another named link to <a href="http://www.markitdown.net/">MarkItDown</a></li>
-<li>Sometimes you just want a URL like <a href="http://www.markitdown.net/">http://www.markitdown.net/</a>.</li>
-</ul>
-<h2 id="horizontal-rule">Horizontal rule</h2>
-<p>A horizontal rule is a line that goes across the middle of the page.</p>
-<hr>
-<p>It&#39;s sometimes handy for breaking things up.</p>
-<h2 id="images">Images</h2>
-<p>Markdown can also contain images. I&#39;ll need to add something here sometime.</p>
-<h2 id="finally">Finally</h2>
-<p>There&#39;s actually a lot more to Markdown than this. See the official <a href="http://daringfireball.net/projects/markdown/basics">introduction</a> and <a href="http://daringfireball.net/projects/markdown/syntax">syntax</a> for more information. However, be aware that this is not using the official implementation, and this might work subtly differently in some of the little things.</p>
-<h1 id="heading-1">Heading 1</h1>
-<h2 id="heading-2">Heading 2</h2>
-<h3 id="heading-3">Heading 3</h3>
-<pre class="code-block"><code class="lang-json">{<span class="hljs-attr">"key"</span>: <span class="hljs-string">"value"</span>}
+<pre class="code-block kubectl"><code class="lang-yaml"><span class="hljs-attribute">apiVersion</span>: extensions/v1beta1
+<span class="hljs-attribute">kind</span>: Deployment
+<span class="hljs-attribute">metadata</span>:
+  <span class="hljs-attribute">name</span>: deployment-example
+<span class="hljs-attribute">spec</span>:
+  <span class="hljs-attribute">replicas</span>: <span class="hljs-number">3</span>
+  <span class="hljs-attribute">revisionHistoryLimit</span>: <span class="hljs-number">10</span>
+  <span class="hljs-attribute">template</span>:
+    <span class="hljs-attribute">metadata</span>:
+      <span class="hljs-attribute">labels</span>:
+        <span class="hljs-attribute">app</span>: nginx
+    <span class="hljs-attribute">spec</span>:
+      <span class="hljs-attribute">containers</span>:
+      - <span class="hljs-attribute">name</span>: nginx
+        <span class="hljs-attribute">image</span>: <span class="hljs-attribute">nginx</span>:<span class="hljs-number">1.10</span>
 </code></pre>
-<pre class="code-block"><code class="lang-turtleshell">possibly_hanging_job &amp; 
-<span class="hljs-built_in">sleep</span> ${TIMEOUT}
-<span class="hljs-built_in">eval</span> <span class="hljs-string">'kill -9 $!'</span> &amp;&gt; /dev/<span class="hljs-literal">null</span>
+<blockquote class="code-block curl">
+<p> Deployment Config to run 3 nginx instances (max rollback set to 10 revisions). </p>
+</blockquote>
+<pre class="code-block curl"><code class="lang-yaml"><span class="hljs-attribute">apiVersion</span>: extensions/v1beta1
+<span class="hljs-attribute">kind</span>: Deployment
+<span class="hljs-attribute">metadata</span>:
+  <span class="hljs-attribute">name</span>: deployment-example
+<span class="hljs-attribute">spec</span>:
+  <span class="hljs-attribute">replicas</span>: <span class="hljs-number">3</span>
+  <span class="hljs-attribute">revisionHistoryLimit</span>: <span class="hljs-number">10</span>
+  <span class="hljs-attribute">template</span>:
+    <span class="hljs-attribute">metadata</span>:
+      <span class="hljs-attribute">labels</span>:
+        <span class="hljs-attribute">app</span>: nginx
+    <span class="hljs-attribute">spec</span>:
+      <span class="hljs-attribute">containers</span>:
+      - <span class="hljs-attribute">name</span>: nginx
+        <span class="hljs-attribute">image</span>: <span class="hljs-attribute">nginx</span>:<span class="hljs-number">1.10</span>
 </code></pre>
-<pre class="code-block"><code class="generic"><span class="hljs-attribute">var somecode</span> = <span class="hljs-string">"a string"</span>;
-</code></pre></div></div>
-<div id="code-tabs-wrapper" class="code-tabs"><ul class="code-tab-list"><li class="code-tab">generic</li><li class="code-tab">json</li><li class="code-tab">turtleshell</li></ul></div>
+<p>Deployment enables declarative updates for Pods and ReplicaSets.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Schema</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>metadata</td>
+<td><a href="#objectmeta-v1">ObjectMeta</a></td>
+<td>Standard object metadata.</td>
+</tr>
+<tr>
+<td>spec</td>
+<td><a href="#deploymentspec-v1beta1">DeploymentSpec</a></td>
+<td>Specification of the desired behavior of the Deployment.</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#deploymentstatus-v1beta1">DeploymentStatus</a></td>
+<td>Most recently observed status of the Deployment.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="deploymentspec-v1beta1">DeploymentSpec v1beta1</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Schema</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>minReadySeconds</td>
+<td>integer</td>
+<td>Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)</td>
+</tr>
+<tr>
+<td>paused</td>
+<td>boolean</td>
+<td>Indicates that the deployment is paused and will not be processed by the deployment controller.</td>
+</tr>
+<tr>
+<td>replicas</td>
+<td>integer</td>
+<td>Number of desired pods. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1.</td>
+</tr>
+<tr>
+<td>revisionHistoryLimit</td>
+<td>integer</td>
+<td>The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified.</td>
+</tr>
+<tr>
+<td>rollbackTo</td>
+<td><a href="#rollbackconfig-v1beta1">RollbackConfig</a></td>
+<td>The config this deployment is rolling back to. Will be cleared after rollback is done.</td>
+</tr>
+<tr>
+<td>selector</td>
+<td><a href="#labelselector-v1beta1">LabelSelector</a></td>
+<td>Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment.</td>
+</tr>
+<tr>
+<td>strategy</td>
+<td><a href="#deploymentstrategy-v1beta1">DeploymentStrategy</a></td>
+<td>The deployment strategy to use to replace existing pods with new ones.</td>
+</tr>
+<tr>
+<td>template</td>
+<td><a href="#podtemplatespec-v1">PodTemplateSpec</a></td>
+<td>Template describes the pods that will be created.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="deploymentstatus-v1beta1">DeploymentStatus v1beta1</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Schema</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>availableReplicas</td>
+<td>integer</td>
+<td>Total number of available pods (ready for at least minReadySeconds) targeted by this deployment.</td>
+</tr>
+<tr>
+<td>observedGeneration</td>
+<td>integer</td>
+<td>The generation observed by the deployment controller.</td>
+</tr>
+<tr>
+<td>replicas</td>
+<td>integer</td>
+<td>Total number of non-terminated pods targeted by this deployment (their labels match the selector).</td>
+</tr>
+<tr>
+<td>unavailableReplicas</td>
+<td>integer</td>
+<td>Total number of unavailable pods targeted by this deployment.</td>
+</tr>
+<tr>
+<td>updatedReplicas</td>
+<td>integer</td>
+<td>Total number of non-terminated pods targeted by this deployment that have the desired template spec.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="write-operations">Write Operations</h2>
+<p>See supported operations below...</p>
+<h2 id="create">Create</h2>
+<blockquote class="code-block kubectl">
+<p> Execute</p>
+</blockquote>
+<pre class="code-block kubectl"><code class="lang-shell">$ echo 'apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: deployment-example
+spec:
+  replicas: 3
+  revisionHistoryLimit: 10
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      -<span class="ruby"> <span class="hljs-symbol">name:</span> nginx
+</span>        image: nginx:1.10
+        ports:
+        -<span class="ruby"> <span class="hljs-symbol">containerPort:</span> <span class="hljs-number">80</span>
+</span>' | kubectl create -f -
+</code></pre>
+<blockquote class="code-block kubectl">
+<p> Returns</p>
+</blockquote>
+<pre class="code-block kubectl"><code class="lang-shell"><span class="hljs-attribute">deployment</span> <span class="hljs-string">"deployment-example"</span> created
+</code></pre>
+<blockquote class="code-block curl">
+<p> Execute</p>
+</blockquote>
+<pre class="code-block curl"><code class="lang-shell">
+<span class="hljs-variable">$ </span>kubectl proxy
+<span class="hljs-variable">$ </span>curl -X POST -H <span class="hljs-string">'Content-Type: application/yaml'</span> --data <span class="hljs-string">'
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: deployment-example
+spec:
+  replicas: 3
+  revisionHistoryLimit: 10
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.10
+        ports:
+        - containerPort: 80
+'</span> <span class="hljs-symbol">http:</span>/<span class="hljs-regexp">/127.0.0.1:8001/apis</span><span class="hljs-regexp">/extensions/v</span>1beta1/namespaces/default/deployments
+</code></pre>
+<blockquote class="code-block curl">
+<p> Returns</p>
+</blockquote>
+<pre class="code-block curl"><code class="lang-json">
+{
+  <span class="hljs-attr">"kind"</span>: <span class="hljs-string">"Deployment"</span>,
+  <span class="hljs-attr">"apiVersion"</span>: <span class="hljs-string">"extensions/v1beta1"</span>,
+  <span class="hljs-attr">"metadata"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"deployment-example"</span>,
+    <span class="hljs-attr">"namespace"</span>: <span class="hljs-string">"default"</span>,
+    <span class="hljs-attr">"selfLink"</span>: <span class="hljs-string">"/apis/extensions/v1beta1/namespaces/default/deployments/deployment-example"</span>,
+    <span class="hljs-attr">"uid"</span>: <span class="hljs-string">"4ccca349-9cb1-11e6-9c54-42010a800148"</span>,
+    <span class="hljs-attr">"resourceVersion"</span>: <span class="hljs-string">"2118306"</span>,
+    <span class="hljs-attr">"generation"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"creationTimestamp"</span>: <span class="hljs-string">"2016-10-28T01:53:19Z"</span>,
+    <span class="hljs-attr">"labels"</span>: {
+      <span class="hljs-attr">"app"</span>: <span class="hljs-string">"nginx"</span>
+    }
+  },
+  <span class="hljs-attr">"spec"</span>: {
+    <span class="hljs-attr">"replicas"</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-attr">"selector"</span>: {
+      <span class="hljs-attr">"matchLabels"</span>: {
+        <span class="hljs-attr">"app"</span>: <span class="hljs-string">"nginx"</span>
+      }
+    },
+    <span class="hljs-attr">"template"</span>: {
+      <span class="hljs-attr">"metadata"</span>: {
+        <span class="hljs-attr">"creationTimestamp"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"labels"</span>: {
+          <span class="hljs-attr">"app"</span>: <span class="hljs-string">"nginx"</span>
+        }
+      },
+      <span class="hljs-attr">"spec"</span>: {
+        <span class="hljs-attr">"containers"</span>: [
+          {
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"nginx"</span>,
+            <span class="hljs-attr">"image"</span>: <span class="hljs-string">"nginx:1.10"</span>,
+            <span class="hljs-attr">"ports"</span>: [
+              {
+                <span class="hljs-attr">"containerPort"</span>: <span class="hljs-number">80</span>,
+                <span class="hljs-attr">"protocol"</span>: <span class="hljs-string">"TCP"</span>
+              }
+            ],
+            <span class="hljs-attr">"resources"</span>: {},
+            <span class="hljs-attr">"terminationMessagePath"</span>: <span class="hljs-string">"/dev/termination-log"</span>,
+            <span class="hljs-attr">"imagePullPolicy"</span>: <span class="hljs-string">"IfNotPresent"</span>
+          }
+        ],
+        <span class="hljs-attr">"restartPolicy"</span>: <span class="hljs-string">"Always"</span>,
+        <span class="hljs-attr">"terminationGracePeriodSeconds"</span>: <span class="hljs-number">30</span>,
+        <span class="hljs-attr">"dnsPolicy"</span>: <span class="hljs-string">"ClusterFirst"</span>,
+        <span class="hljs-attr">"securityContext"</span>: {}
+      }
+    },
+    <span class="hljs-attr">"strategy"</span>: {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"RollingUpdate"</span>,
+      <span class="hljs-attr">"rollingUpdate"</span>: {
+        <span class="hljs-attr">"maxUnavailable"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"maxSurge"</span>: <span class="hljs-number">1</span>
+      }
+    },
+    <span class="hljs-attr">"revisionHistoryLimit"</span>: <span class="hljs-number">10</span>
+  },
+  <span class="hljs-attr">"status"</span>: {}
+}
+</code></pre>
+<p>create a Deployment</p>
+<h3 id="http-request">HTTP Request</h3>
+<p><code>POST /apis/extensions/v1beta1/namespaces/{namespace}/deployments</code></p>
+<h3 id="path-parameters">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Schema</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>namespace</td>
+<td></td>
+<td>object name and auth scope, such as for teams and projects</td>
+</tr>
+<tr>
+<td>pretty</td>
+<td></td>
+<td>If &#39;true&#39;, then the output is pretty printed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="query-parameters">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Schema</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td><a href="#deployment-v1beta1">Deployment</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response">Response</h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Schema</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="#deployment-v1beta1">Deployment</a></td>
+<td>OK</td>
+</tr>
+</tbody>
+</table>
+<h2 id="replace">Replace</h2>
+<blockquote class="code-block kubectl">
+<p> Execute</p>
+</blockquote>
+<pre class="code-block kubectl"><code class="lang-shell">
+$ echo 'apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: deployment-example
+spec:
+  replicas: 3
+  revisionHistoryLimit: 10
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      -<span class="ruby"> <span class="hljs-symbol">name:</span> nginx
+</span>        image: nginx:1.11
+        ports:
+        -<span class="ruby"> <span class="hljs-symbol">containerPort:</span> <span class="hljs-number">80</span>
+</span>' | kubectl replace -f -
+</code></pre>
+<blockquote class="code-block kubectl">
+<p> Returns</p>
+</blockquote>
+<pre class="code-block kubectl"><code class="lang-shell">
+<span class="hljs-attribute">deployment</span> <span class="hljs-string">"deployment-example"</span> replaced
+</code></pre>
+<blockquote class="code-block curl">
+<p> Execute</p>
+</blockquote>
+<pre class="code-block curl"><code class="lang-shell">
+<span class="hljs-variable">$ </span>kubectl proxy
+<span class="hljs-variable">$ </span>curl -X PUT -H <span class="hljs-string">'Content-Type: application/yaml'</span> --data <span class="hljs-string">'
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: deployment-example
+spec:
+  replicas: 3
+  revisionHistoryLimit: 10
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.11
+        ports:
+        - containerPort: 80
+'</span> <span class="hljs-symbol">http:</span>/<span class="hljs-regexp">/127.0.0.1:8001/apis</span><span class="hljs-regexp">/extensions/v</span>1beta1/namespaces/default/deployments/deployment-example
+</code></pre>
+<blockquote class="code-block curl">
+<p> Returns</p>
+</blockquote>
+<pre class="code-block curl"><code class="lang-json">
+{
+  <span class="hljs-attr">"kind"</span>: <span class="hljs-string">"Deployment"</span>,
+  <span class="hljs-attr">"apiVersion"</span>: <span class="hljs-string">"extensions/v1beta1"</span>,
+  <span class="hljs-attr">"metadata"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"deployment-example"</span>,
+    <span class="hljs-attr">"namespace"</span>: <span class="hljs-string">"default"</span>,
+    <span class="hljs-attr">"selfLink"</span>: <span class="hljs-string">"/apis/extensions/v1beta1/namespaces/default/deployments/deployment-example"</span>,
+    <span class="hljs-attr">"uid"</span>: <span class="hljs-string">"4ccca349-9cb1-11e6-9c54-42010a800148"</span>,
+    <span class="hljs-attr">"resourceVersion"</span>: <span class="hljs-string">"2119082"</span>,
+    <span class="hljs-attr">"generation"</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">"creationTimestamp"</span>: <span class="hljs-string">"2016-10-28T01:53:19Z"</span>,
+    <span class="hljs-attr">"labels"</span>: {
+      <span class="hljs-attr">"app"</span>: <span class="hljs-string">"nginx"</span>
+    }
+  },
+  <span class="hljs-attr">"spec"</span>: {
+    <span class="hljs-attr">"replicas"</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-attr">"selector"</span>: {
+      <span class="hljs-attr">"matchLabels"</span>: {
+        <span class="hljs-attr">"app"</span>: <span class="hljs-string">"nginx"</span>
+      }
+    },
+    <span class="hljs-attr">"template"</span>: {
+      <span class="hljs-attr">"metadata"</span>: {
+        <span class="hljs-attr">"creationTimestamp"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"labels"</span>: {
+          <span class="hljs-attr">"app"</span>: <span class="hljs-string">"nginx"</span>
+        }
+      },
+      <span class="hljs-attr">"spec"</span>: {
+        <span class="hljs-attr">"containers"</span>: [
+          {
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"nginx"</span>,
+            <span class="hljs-attr">"image"</span>: <span class="hljs-string">"nginx:1.11"</span>,
+            <span class="hljs-attr">"ports"</span>: [
+              {
+                <span class="hljs-attr">"containerPort"</span>: <span class="hljs-number">80</span>,
+                <span class="hljs-attr">"protocol"</span>: <span class="hljs-string">"TCP"</span>
+              }
+            ],
+            <span class="hljs-attr">"resources"</span>: {},
+            <span class="hljs-attr">"terminationMessagePath"</span>: <span class="hljs-string">"/dev/termination-log"</span>,
+            <span class="hljs-attr">"imagePullPolicy"</span>: <span class="hljs-string">"IfNotPresent"</span>
+          }
+        ],
+        <span class="hljs-attr">"restartPolicy"</span>: <span class="hljs-string">"Always"</span>,
+        <span class="hljs-attr">"terminationGracePeriodSeconds"</span>: <span class="hljs-number">30</span>,
+        <span class="hljs-attr">"dnsPolicy"</span>: <span class="hljs-string">"ClusterFirst"</span>,
+        <span class="hljs-attr">"securityContext"</span>: {}
+      }
+    },
+    <span class="hljs-attr">"strategy"</span>: {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"RollingUpdate"</span>,
+      <span class="hljs-attr">"rollingUpdate"</span>: {
+        <span class="hljs-attr">"maxUnavailable"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"maxSurge"</span>: <span class="hljs-number">1</span>
+      }
+    },
+    <span class="hljs-attr">"revisionHistoryLimit"</span>: <span class="hljs-number">10</span>
+  },
+  <span class="hljs-attr">"status"</span>: {
+    <span class="hljs-attr">"observedGeneration"</span>: <span class="hljs-number">4</span>,
+    <span class="hljs-attr">"replicas"</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-attr">"updatedReplicas"</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-attr">"availableReplicas"</span>: <span class="hljs-number">3</span>
+  }
+}
+</code></pre>
+<p>replace the specified Deployment</p>
+<h3 id="http-request">HTTP Request</h3>
+<p><code>PUT /apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}</code></p>
+<h3 id="path-parameters">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Schema</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td>name of the Deployment</td>
+</tr>
+<tr>
+<td>namespace</td>
+<td></td>
+<td>object name and auth scope, such as for teams and projects</td>
+</tr>
+<tr>
+<td>pretty</td>
+<td></td>
+<td>If &#39;true&#39;, then the output is pretty printed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="query-parameters">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Schema</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td><a href="#deployment-v1beta1">Deployment</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response">Response</h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Schema</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="#deployment-v1beta1">Deployment</a></td>
+<td>OK</td>
+</tr>
+</tbody>
+</table>
 </div>
+<div id="code-tabs-wrapper" class="code-tabs"><ul class="code-tab-list"><li class="code-tab" id="kubectl">kubectl</li><li class="code-tab" id="curl">curl</li></ul></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="actions.js"></script>
+<script src="tabvisibility.js"></script>
 </body>
 </html>
