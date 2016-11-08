@@ -24,14 +24,10 @@
     right: 0;
 }
 
-.body-content h1 {
-    width: 500px;
-    /*clear: both;*/
-}
-
-.body-content h2 {
+.body-content h1, .body-content h2 {
     width: 500px;
     clear: both;
+    padding-top: 20px;
 }
 
 .body-content h3 {
@@ -96,4 +92,8 @@
 
 .nav-level-3 {
     padding-left: 25px;
+}
+
+code {
+    white-space: pre-line;
 }

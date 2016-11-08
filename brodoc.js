@@ -153,10 +153,11 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <meta charset="UTF-8">
 <title>title</title>
 <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-<link rel="stylesheet" href="stylesheet.css" type="text/css">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="./node_modules/highlight.js/styles/default.css" type="text/css">
+<link rel="stylesheet" href="github.css" type="text/css">
+<link rel="stylesheet" href="stylesheet.css" type="text/css">
 </head>
 <body>
 <div id="wrapper">
