@@ -1,7 +1,6 @@
 // https://jsfiddle.net/upqwhou2/
 
 $(document).ready(function() {
-    window.location = window.location.href;
     var navigationLinks = $('#sidebar-wrapper > ul > li > a');
     var sectionIdTonavigationLink = {};
     var sections = $("#page-content-wrapper").children().map(function(index, node) {
@@ -14,7 +13,7 @@ $(document).ready(function() {
 
     function checkScroll() {
         var scrollPosition = $(window).scrollTop();
-        var offset = 250;
+        var offset = 50;
         scrollPosition += offset;
         sections.each(function() {
             var currentSection = $(this);
