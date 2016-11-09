@@ -146,8 +146,7 @@ function generateCodeTab(tab) {
 }
 
 function generateDoc(navContent, bodyContent, codeTabContent) {
-    var doc = `
-<!DOCTYPE html>
+    var doc = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
