@@ -32,18 +32,17 @@ var codeTabs = [];
 
 const lexer = new marked.Lexer();
 // lexer.rules.bdoc = /^(\/{4} )(\w+).*$/;
-console.log(marked.Lexer.prototype);
-// console.log(lexer.rules);
-// console.log(renderer.prototype);
-// renderer.bdoc = function(text) {
-//     console.log('34543534545435', text);
-// };
-// console.log(renderer);
 
+var idAffix = 0;
 renderer.heading = (text, level, raw) => {
+    var id = raw.toLowerCase().replace(/[^\w]+/g, '-');
+    if (level > 1) {
+        idAffix++;
+        id += '-' + idAffix;
+    }
     navIds.push(
         {
-            id: raw.toLowerCase().replace(/[^\w]+/g, '-'),
+            id: id,
             text: text,
             level: level
         }
@@ -52,7 +51,7 @@ renderer.heading = (text, level, raw) => {
         + level
         + ' id="'
         + renderer.options.headerPrefix
-        + raw.toLowerCase().replace(/[^\w]+/g, '-')
+        + id
         + '">'
         + text
         + '</h'
