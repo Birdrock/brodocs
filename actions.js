@@ -3,12 +3,18 @@
 $(document).ready(function() {
     var navigationLinks = $('#sidebar-wrapper > ul > li > a');
     var sectionIdTonavigationLink = {};
-    var sections = $("#page-content-wrapper").children().map(function(index, node) {
+    var sections = $('#page-content-wrapper').find('h1, h2').map(function(index, node) {
         if (node.id) {
             sectionIdTonavigationLink[node.id] = $('#sidebar-wrapper > ul > li > a[href="#' + node.id + '"]');
             return node;
         }
     });
+    // var sections = $("#page-content-wrapper").children().map(function(index, node) {
+    //     if (node.id) {
+    //         sectionIdTonavigationLink[node.id] = $('#sidebar-wrapper > ul > li > a[href="#' + node.id + '"]');
+    //         return node;
+    //     }
+    // });
     var sectionsReversed = $(sections.get().reverse());
 
     function checkScroll() {
@@ -21,11 +27,16 @@ $(document).ready(function() {
             var id = $(this).attr('id');
             if (scrollPosition >= sectionTop) {
                 navigationLinks.removeClass('selected');
-                console.log("section navigation link ", navigationLinks);
                 sectionIdTonavigationLink[id].addClass('selected');
             }
+            if (($(this).offset().top < window.pageYOffset + 50) && $(this).offset().top + $(this).height() > window.pageYOffset) {
+                window.location.hash = id;
+            }
+            // console.log("offset top ", $(this).offset().top, " height ", $(this).height(), " window y offset ", window.pageYOffset);
         });
     }
     checkScroll();
-    $(window).scroll(checkScroll);
+    $(window).scroll(function() {
+        checkScroll();
+    });
 });

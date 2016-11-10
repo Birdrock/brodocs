@@ -40,13 +40,15 @@ renderer.heading = (text, level, raw) => {
         idAffix++;
         id += '-' + idAffix;
     }
-    navIds.push(
-        {
-            id: id,
-            text: text,
-            level: level
-        }
-    );
+    if (level < 3) {
+        navIds.push(
+            {
+                id: id,
+                text: text,
+                level: level
+            }
+        );
+    }
     return '<h'
         + level
         + ' id="'
