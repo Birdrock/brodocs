@@ -9,10 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "highlight.js": "^9.7.0",
     "marked": "^0.3.6"
   },
   "dependencies": {
+    "highlight.js": "^9.7.0",
     "node-static": "^0.7.9"
   },
   "engines": {
