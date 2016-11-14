@@ -4,7 +4,7 @@ At the top of the file there should be a short introduction and/ or overview tha
 
 ## Code Example
 
-> bdocs-tab:kubectl Deployment Config to run 3 nginx instances (max rollback set to 10 revisions).
+\> bdocs-tab:kubectl Deployment Config to run 3 nginx instances (max rollback set to 10 revisions).
 
 bdocs-tab:tab will be stripped during rendering and utilized to with CSS to show or hide the prefered tab. kubectl indicates the desired tab, since blockquotes have no specific syntax highlighting.
 
