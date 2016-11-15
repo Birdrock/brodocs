@@ -54,6 +54,11 @@ node brodoc.js
 
 This will generate the index.html file, which can be opened in a browser or served.
 
+The included node-static server can be run from the project root via
+```
+npm start
+```
+
 ## License
 
 Apache License Version 2.0
