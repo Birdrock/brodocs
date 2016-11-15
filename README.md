@@ -38,6 +38,22 @@ With specific tokens on blockquotes and code blocks, the chunks can be placed ac
 
 Clone the repository, then add documents into documents directory. Modify the manifest.json to contain the document filenames in the order desired. The docs field is an array of objects with a filename key.
 
+As a NodeJS program, a valid installation of node is required. Once node is installed, verify it can be run from command line.
+```
+node --version
+```
+Next, depedencies need to be installed via npm from the root of the project directory.
+```
+npm install
+```
+
+Once dependencies are installed, run
+```
+node brodoc.js
+```
+
+This will generate the index.html file, which can be opened in a browser or served.
+
 ## License
 
 Apache License Version 2.0
