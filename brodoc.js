@@ -30,7 +30,7 @@ var navIds = [];
 var bodyContent = '';
 var codeTabs = [];
 
-const lexer = new marked.Lexer();
+// const lexer = new marked.Lexer();
 // lexer.rules.bdoc = /^(\/{4} )(\w+).*$/;
 
 var idAffix = 0;
@@ -147,7 +147,8 @@ function generateCodeTab(tab) {
 }
 
 function generateDoc(navContent, bodyContent, codeTabContent) {
-    var doc = `<!DOCTYPE html>
+    var doc = 
+`<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -169,8 +170,7 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <script src="actions.js"></script>
 <script src="tabvisibility.js"></script>
 </body>
-</html>
-`;
+</html>`;
     fs.writeFile('index.html', doc, function (err) {
         if (err) {
             return console.log(err);
