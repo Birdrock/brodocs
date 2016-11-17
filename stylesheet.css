@@ -3,9 +3,10 @@
     width: 20%; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 60px;
+    top: 0;
     left: 0;
     background-color: lightslategrey;
+    border-right: 2px solid slategrey;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -58,6 +59,10 @@ body {
     width: 55%;
 }
 
+.body-content table th:nth-child(1), .body-content table th:nth-child(2) {
+    width: 25%;
+}
+
 .body-content table tr td {
     word-wrap: break-word;
 }
@@ -88,12 +93,12 @@ body {
 }
 
 #code-tabs-wrapper {
-    width: 100%;
+    width: 35%;
     height: 60px;
     position: fixed;
     top: 0;
     right: 0;
-    background-color: darkgrey;
+    background-color: dimgrey;
     /*border: 3px solid darkgrey;*/
 }
 
