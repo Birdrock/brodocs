@@ -34,11 +34,14 @@ var codeTabs = [];
 // lexer.rules.bdoc = /^(\/{4} )(\w+).*$/;
 
 var idAffix = 0;
+var uniqueNav = [];
 renderer.heading = (text, level, raw) => {
     var id = raw.toLowerCase().replace(/[^\w]+/g, '-');
-    if (level > 1) {
+    if ((uniqueNav.indexOf(id) !== -1) && (level > 1)) {
         idAffix++;
         id += '-' + idAffix;
+    } else {
+        uniqueNav.push(id);
     }
     if (level < 3) {
         navIds.push(

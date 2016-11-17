@@ -9,12 +9,7 @@ $(document).ready(function() {
             return node;
         }
     });
-    // var sections = $("#page-content-wrapper").children().map(function(index, node) {
-    //     if (node.id) {
-    //         sectionIdTonavigationLink[node.id] = $('#sidebar-wrapper > ul > li > a[href="#' + node.id + '"]');
-    //         return node;
-    //     }
-    // });
+
     var sectionsReversed = $(sections.get().reverse());
 
     function checkScroll() {
@@ -32,7 +27,6 @@ $(document).ready(function() {
             if (($(this).offset().top < window.pageYOffset + 50) && $(this).offset().top + $(this).height() > window.pageYOffset) {
                 window.location.hash = id;
             }
-            // console.log("offset top ", $(this).offset().top, " height ", $(this).height(), " window y offset ", window.pageYOffset);
         });
     }
     checkScroll();
