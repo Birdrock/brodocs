@@ -3,6 +3,9 @@ const fs = require('fs');
 const marked = require('marked');
 const highlight = require('highlight.js');
 const renderer = new marked.Renderer();
+const brodocDec = require('./markedDecorations.js');
+
+// brodocDec.decorateMarked(renderer);
 
 marked.setOptions({
     renderer: renderer,
@@ -22,8 +25,10 @@ var config = require('./manifest');
 var docs = config.docs;
 
 var files = [];
+var fileArray = [];
 docs.forEach(file => {
     files.push(file.filename);
+    fileArray.push(file);
 });
 
 var navIds = [];
@@ -111,30 +116,63 @@ renderer.code = function (code, lang, escaped) {
 };
 
 var path = docFolder;
-var index = 0;
-// Might need to make synchronous to preserver order of documents
-files.forEach(file => {
-    fs.readFile(path + file, 'utf8', function (err, data) {
-        index++;
-        bodyContent += (marked(data, { renderer: renderer }));
-        if (index >= files.length) {
+var fIndex = 0;
+var rIndex = 0;
+var fileObj = {toc: [], content: [], tabs: []};
+fileArray.forEach((file, index) => {
+    fs.readFile(path + file.filename, 'utf8', (err, data) => {
+        rIndex++;
+        file.content = data;
+
+        if (rIndex >= files.length) {
+            // do the things
+            parseFileContent(fileArray);
             var navContent = generateNavItems(navIds);
             var codeTabContent = generateCodeTabItems(codeTabs);
+            var bodyContent = flattenContent(parsedContentArray);
             generateDoc(navContent, bodyContent, codeTabContent);
         }
     });
 });
 
-function generateNavItems(navObjs) {
-    var navList = '';
-    navObjs.forEach(obj => {
-        navList += generateNav(obj);
+function flattenContent(content) {
+    var flattenedContent = content.reduce(function(accum, val) {
+        return accum + val;
     });
-    return navList;
+    return flattenedContent;
+}
+
+var parsedContentArray = [];
+function parseFileContent(files) {
+    files.forEach((file, index) => {
+        parsedContentArray[index] = parseDoc(file.content);
+    });
+}
+function parseDoc(doc) {
+    return marked(doc, { renderer: renderer });
+}
+
+function generateNavItems(navObjs) {
+    var reversedNavs = navObjs.reverse();
+    var currentNestArray = [];
+    var nestedNavArray = [];
+    reversedNavs.forEach(obj => {
+        if (obj.level !== 1) {
+            currentNestArray.push(generateNav(obj));
+        } else if (obj.level === 1) {
+            var flattenedNest = flattenContent(currentNestArray.reverse());
+            nestedNavArray.push(generateNestedNav(obj, flattenedNest));
+        }
+    });
+    return flattenContent(nestedNavArray.reverse());
 }
 
 function generateNav(obj) {
     return '<li class="nav-level-' + obj.level + '">' + '<a href="#' + obj.id + '" class="nav-item">' + obj.text + '</a></li>';
+}
+
+function generateNestedNav(parent, nest) {
+    return '<ul>' + generateNav(parent) + '<ul id="' + parent.id + '-nav">' + nest + '</ul></ul>';
 }
 
 function generateCodeTabItems(tabs) {
@@ -165,9 +203,9 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 </head>
 <body>
 <div id="wrapper">
-<div id="sidebar-wrapper" class="side-nav"><ul class="sidebar-nav">${navContent}</ul></div>
-<div id="page-content-wrapper" class="body-content container-fluid">${bodyContent}</div>
+<div id="sidebar-wrapper" class="side-nav side-bar-nav">${navContent}</div>
 <div id="code-tabs-wrapper" class="code-tabs"><ul class="code-tab-list">${codeTabContent}</ul></div>
+<div id="page-content-wrapper" class="body-content container-fluid">${bodyContent}</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="actions.js"></script>

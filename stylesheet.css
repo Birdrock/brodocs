@@ -73,6 +73,11 @@ body {
     font-size: smaller;
 }
 
+.body-content blockquote p {
+    padding-top: 0;
+    color: black;
+}
+
 .body-content blockquote.code-block {
     background: lightsteelblue;
 }
@@ -126,12 +131,4 @@ body {
 
 .side-nav a {
     color: black;
-}
-
-.nav-level-2 {
-    padding-left: 15px;
-}
-
-.nav-level-3 {
-    padding-left: 25px;
 }
