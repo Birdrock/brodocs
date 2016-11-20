@@ -127,10 +127,13 @@ fileArray.forEach((file, index) => {
         if (rIndex >= files.length) {
             // do the things
             parseFileContent(fileArray);
-            var navContent = generateNavItems(navIds);
+            var navData = generateNavItems(navIds);
+            var navContent = navData.content;
+            var navDataArray = navData.navDataArray;
             var codeTabContent = generateCodeTabItems(codeTabs);
             var bodyContent = flattenContent(parsedContentArray);
             generateDoc(navContent, bodyContent, codeTabContent);
+            generateNavJson(navDataArray);
         }
     });
 });
@@ -157,9 +160,13 @@ function generateNavItems(navObjs) {
     var currentNestArray = [];
     var flattenedNest = '';
     var nestedNavArray = [];
+    var navArrayInvert = [];
+    var navSectionArray = [];
     reversedNavs.forEach(obj => {
         if (obj.level !== 1) {
             currentNestArray.push(generateNav(obj));
+            navSectionArray.push(obj.id);
+            // console.log(navSectionArray);
         } else if (obj.level === 1) {
             if (currentNestArray.length !==0) {
                 flattenedNest = flattenContent(currentNestArray.reverse());
@@ -167,10 +174,14 @@ function generateNavItems(navObjs) {
             nestedNavArray.push(generateNestedNav(obj, flattenedNest));
             currentNestArray.length = 0;
             flattenedNest = '';
+            var navSectionArrayClone = Object.assign([], navSectionArray);
+            navArrayInvert.push({section: obj.id, subsections: navSectionArrayClone});
+            navSectionArray.length = 0;
         }
     });
+    
     var navContent = flattenContent(nestedNavArray.reverse());
-    return navContent;
+    return {content: navContent, navDataArray: {toc: navArrayInvert}};
 }
 
 function generateNav(obj) {
@@ -183,6 +194,17 @@ function generateNestedNav(parent, nest) {
         nestContent = nest ? '<ul id="' + parent.id + '-nav" style="display: none;">' + nest + '</ul>' : '';
     }
     return '<ul>' + generateNav(parent) + nestContent + '</ul>';
+}
+
+function generateNavJson(data) {
+    var navJson = JSON.stringify(data);
+    navScript = `(function(){navData = ${navJson}})();`;
+    fs.writeFile('./navData.js', navScript, function(err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("navData.js saved!");
+    });
 }
 
 function generateCodeTabItems(tabs) {
@@ -218,14 +240,16 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <div id="page-content-wrapper" class="body-content container-fluid">${bodyContent}</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="navData.js"></script>
+<script src="scroll.js"></script>
 <script src="actions.js"></script>
 <script src="tabvisibility.js"></script>
 </body>
 </html>`;
-    fs.writeFile('index.html', doc, function (err) {
+    fs.writeFile('./index.html', doc, function (err) {
         if (err) {
             return console.log(err);
         }
-        console.log("File saved!");
+        console.log("index.html saved!");
     });
 }
