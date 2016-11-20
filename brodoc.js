@@ -172,7 +172,7 @@ function generateNav(obj) {
 }
 
 function generateNestedNav(parent, nest) {
-    return '<ul>' + generateNav(parent) + '<ul id="' + parent.id + '-nav">' + nest + '</ul></ul>';
+    return '<ul>' + generateNav(parent) + '<ul id="' + parent.id + '-nav" style="display: none;">' + nest + '</ul></ul>';
 }
 
 function generateCodeTabItems(tabs) {
