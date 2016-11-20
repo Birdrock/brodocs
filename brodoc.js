@@ -155,16 +155,22 @@ function parseDoc(doc) {
 function generateNavItems(navObjs) {
     var reversedNavs = navObjs.reverse();
     var currentNestArray = [];
+    var flattenedNest = '';
     var nestedNavArray = [];
     reversedNavs.forEach(obj => {
         if (obj.level !== 1) {
             currentNestArray.push(generateNav(obj));
         } else if (obj.level === 1) {
-            var flattenedNest = flattenContent(currentNestArray.reverse());
+            if (currentNestArray.length !==0) {
+                flattenedNest = flattenContent(currentNestArray.reverse());
+            }
             nestedNavArray.push(generateNestedNav(obj, flattenedNest));
+            currentNestArray.length = 0;
+            flattenedNest = '';
         }
     });
-    return flattenContent(nestedNavArray.reverse());
+    var navContent = flattenContent(nestedNavArray.reverse());
+    return navContent;
 }
 
 function generateNav(obj) {
@@ -172,7 +178,11 @@ function generateNav(obj) {
 }
 
 function generateNestedNav(parent, nest) {
-    return '<ul>' + generateNav(parent) + '<ul id="' + parent.id + '-nav" style="display: none;">' + nest + '</ul></ul>';
+    var nestContent = '';
+    if (nest.length > 0) {
+        nestContent = nest ? '<ul id="' + parent.id + '-nav" style="display: none;">' + nest + '</ul>' : '';
+    }
+    return '<ul>' + generateNav(parent) + nestContent + '</ul>';
 }
 
 function generateCodeTabItems(tabs) {
