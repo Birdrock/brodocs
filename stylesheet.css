@@ -1,3 +1,10 @@
+/* Github CSS overrides */
+ul, li {
+    margin: 0;
+}
+
+/* Brodoc CSS */
+
 #sidebar-wrapper {
     height: 100%; /* 100% Full-height */
     width: 20%; /* 0 width - change this with JavaScript */

@@ -166,7 +166,6 @@ function generateNavItems(navObjs) {
         if (obj.level !== 1) {
             currentNestArray.push(generateNav(obj));
             navSectionArray.push(obj.id);
-            // console.log(navSectionArray);
         } else if (obj.level === 1) {
             if (currentNestArray.length !==0) {
                 flattenedNest = flattenContent(currentNestArray.reverse());
@@ -242,7 +241,7 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="navData.js"></script>
 <script src="scroll.js"></script>
-<script src="actions.js"></script>
+<!--<script src="actions.js"></script>-->
 <script src="tabvisibility.js"></script>
 </body>
 </html>`;

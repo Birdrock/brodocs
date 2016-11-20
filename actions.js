@@ -14,12 +14,18 @@ $(document).ready(function() {
     var topLevelSections = $('#page-content-wrapper').find('h1').map(function(index, node) {
         if (node.id) {
             sectionIdToNavContainerLink[node.id] = $('#sidebar-wrapper > ul > ul[id="' + node.id + '-nav' +'"]');
+            return node;
         }
     });
 
+    var firstLevelNavs = $('#sidebar-wrapper > li');
+    var secondLevelNavs = $('#sidebar-wrapper > ul > ul');
+    var secondLevelNavContents = $('#sidebar-wrapper > ul > ul > li');
+    var thirdLevelNavs = null; // TODO: When compile provides 3 level nav, implement
+
     var sectionsReversed = $(sections.get().reverse());
 
-    function checkScroll() {
+    function checkScroll(event) {
         var scrollPosition = $(window).scrollTop();
         var offset = 50;
         scrollPosition += offset;
@@ -30,9 +36,14 @@ $(document).ready(function() {
             if (scrollPosition >= sectionTop) {
                 navigationLinks.removeClass('selected');
                 sectionIdTonavigationLink[id].addClass('selected');
-                if (sectionIdToNavContainerLink[id]) {
+                var sectionNavContainer = sectionIdToNavContainerLink[id];
+                var sectionNavContainerDisplay;
+                if (sectionNavContainer) {
+                    sectionNavContainerDisplay = sectionNavContainer.css('display');
+                }
+                if (sectionNavContainer && sectionNavContainerDisplay === 'none') {
                     navigationSections.toggle(false);
-                    sectionIdToNavContainerLink[id].toggle(true);
+                    sectionNavContainer.toggle(true);
                 }
             }
             if (($(this).offset().top < window.pageYOffset + 50) && $(this).offset().top + $(this).height() > window.pageYOffset) {
@@ -41,7 +52,7 @@ $(document).ready(function() {
         });
     }
     checkScroll();
-    $(window).scroll(function() {
-        checkScroll();
+    $(window).on('scroll', function(event) {
+        checkScroll(event);
     });
 });
