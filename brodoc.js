@@ -158,22 +158,46 @@ function parseDoc(doc) {
 function generateNavItems(navObjs) {
     var reversedNavs = navObjs.reverse();
     var currentNestArray = [];
+    var currentStrongArray = [];
     var flattenedNest = '';
-    var nestedNavArray = [];
-    var navArrayInvert = [];
+    var nestedNavArray = []; // Array containing generated html menu items - is flattened into a string.
+    var navArrayInvert = []; // Deals with data layer of navigation;
     var navSectionArray = [];
+    var navStrongSectionArray = [];
+    var navSectionArrayClone;
     reversedNavs.forEach(obj => {
+        var strong = (obj.id.indexOf('-strong-') !== -1);
         if (obj.level !== 1) {
-            currentNestArray.push(generateNav(obj));
-            navSectionArray.push(obj.id);
+            if (strong && currentNestArray.length !== 0) {
+                flattenedNest = flattenContent(currentNestArray.reverse());
+                currentStrongArray.push(generateNestedNav(obj, flattenedNest));
+                currentNestArray.length = 0;
+
+                navSectionArrayClone = Object.assign([], navSectionArray);
+                navStrongSectionArray.push({section: obj.id, subsections: navSectionArrayClone});
+                navSectionArray.length = 0;
+            } else {
+                currentNestArray.push(generateNav(obj));
+                navSectionArray.push({section: obj.id});
+            }
         } else if (obj.level === 1) {
-            if (currentNestArray.length !==0) {
+            if (currentStrongArray.length !== 0) {
+                currentNestArray.forEach(obj => {
+                    currentStrongArray.push(obj);
+                });
+                flattenedNest = flattenContent(currentStrongArray.reverse());
+            } else if (currentNestArray.length !== 0) {
                 flattenedNest = flattenContent(currentNestArray.reverse());
             }
             nestedNavArray.push(generateNestedNav(obj, flattenedNest));
             currentNestArray.length = 0;
+            currentStrongArray.length = 0;
             flattenedNest = '';
-            var navSectionArrayClone = Object.assign([], navSectionArray);
+
+            navSectionArray.forEach(obj => {
+                navStrongSectionArray.push(obj);
+            });
+            navSectionArrayClone = Object.assign([], navStrongSectionArray);
             navArrayInvert.push({section: obj.id, subsections: navSectionArrayClone});
             navSectionArray.length = 0;
         }
@@ -233,12 +257,12 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <link rel="stylesheet" href="stylesheet.css" type="text/css">
 </head>
 <body>
-<div id="wrapper">
 <div id="sidebar-wrapper" class="side-nav side-bar-nav">${navContent}</div>
+<div id="wrapper">
 <div id="code-tabs-wrapper" class="code-tabs"><ul class="code-tab-list">${codeTabContent}</ul></div>
 <div id="page-content-wrapper" class="body-content container-fluid">${bodyContent}</div>
 </div>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="jquery-3.1.1.min.js"></script>
 <script src="navData.js"></script>
 <script src="scroll.js"></script>
 <!--<script src="actions.js"></script>-->

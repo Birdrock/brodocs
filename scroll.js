@@ -1,22 +1,25 @@
 $(document).ready(function() {
 
     var toc = navData.toc;
+    console.log(toc);
 
-    function collectNodes() {
+    function collectNodes(tocMap) {
         var tocNodes = {};
-        toc.map(function(node, index) {
+        tocMap.map(function(node, index) {
             var sectionNode = $('#' + node.section);
-            var subsections = node.subsections;
             var tocSubsections = {};
-            var subsectionNodes = subsections.map(function(node, index) {
-                var subNode = $('#' + node);
-                tocSubsections[node] = {subsection: subNode};
-            });
-            tocNodes[node.section] = {section: sectionNode, subsections: tocSubsections};
+            tocItem = {section: sectionNode};
+            var subsectionNodes;
+            if (node.subsections) {
+                subsectionNodes = (collectNodes(node.subsections));
+                tocItem.subsections = subsectionNodes;
+            }
+            tocNodes[node.section] = tocItem;
         });
         return tocNodes;
     }
-    var tocItems = collectNodes();
+    var tocItems = collectNodes(toc);
+    console.log(tocItems);
 
     function checkLocs(nodes) {
         for (var node in nodes) {
@@ -53,7 +56,7 @@ $(document).ready(function() {
                 // TODO: Revisit to only collapse previous menu to avoid having to collapse all
                 collapseAllNavs();
                 lastSectionToken = sectionToken[i];
-                $('#' + sectionToken.section + '-nav').toggle(true);
+                $('#' + sectionToken.section + '-nav').show();
                 setActiveSubsection(sectionToken.section, sectionToken.subsections, scrollPosition);
                 return;
             } 
@@ -62,7 +65,7 @@ $(document).ready(function() {
 
     function collapseAllNavs() {
         toc.forEach(function(section) {
-            $('#' + section.section + '-nav').toggle(false);
+            $('#' + section.section + '-nav').hide();
         });
     }
 
