@@ -58,14 +58,14 @@ $(document).ready(function() {
             currL1Nav.show('fast');
             prevSectionToken = activeSection.token;
         }
-        if (activeSection.subsections && (activeSection.token === prevSectionToken)) {
+        if (activeSection.subsections) {
             activeSubSection = checkNodePositions(activeSection.subsections, tocFlat, scrollPosition);
             if (!activeSubSection) {
                 return;
             }
             if (!prevSubsectionToken) {
                 prevSubsectionToken = activeSubSection.token;
-                currL2Nav = getNavNode(activeSection.token);
+                currL2Nav = getNavNode(activeSubSection.token);
                 currL2Nav.show('fast');
             } else if (activeSubSection.token !== prevSubsectionToken) {
                 prevL2Nav = getNavNode(prevSubsectionToken);
@@ -75,7 +75,7 @@ $(document).ready(function() {
                 prevSubsectionToken = activeSubSection.token;
             }
         }
-        return {L1: prevSectionToken, L2: prevSubsectionToken}
+        return {L1: prevSectionToken, L2: prevSubsectionToken};
     }
 
     var prevElemToken;
@@ -94,10 +94,12 @@ $(document).ready(function() {
         }
         if (!prevElemToken) {
             getNavElemNode(activeElemToken).addClass('selected');
+            console.log(activeElemToken);
             prevElemToken = activeElemToken;
             return;
         }
         if (activeElemToken !== prevElemToken) {
+            console.log(activeElemToken);
             getNavElemNode(prevElemToken).removeClass('selected');
             getNavElemNode(activeElemToken).addClass('selected');
             prevElemToken = activeElemToken;

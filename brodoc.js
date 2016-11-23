@@ -257,7 +257,6 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./node_modules/highlight.js/styles/default.css" type="text/css">
-<link rel="stylesheet" href="github.css" type="text/css">
 <link rel="stylesheet" href="stylesheet.css" type="text/css">
 </head>
 <body>
