@@ -116,7 +116,7 @@ ul, li {
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-    background-color: lightslategrey;
+    background-color: whitesmoke;
     border-right: 2px solid slategrey;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
