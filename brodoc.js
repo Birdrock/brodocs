@@ -256,7 +256,7 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <html>
 <head>
 <meta charset="UTF-8">
-<title>title</title>
+<title>${manifest.title}</title>
 <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -265,7 +265,7 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <link rel="stylesheet" href="stylesheet.css" type="text/css">
 </head>
 <body>
-<div id="sidebar-wrapper" class="side-nav side-bar-nav">${navContent}</div>
+<div id="sidebar-wrapper" class="side-nav side-bar-nav">${navContent}</div>${copyright}<div></div>
 <div id="wrapper">
 <div id="code-tabs-wrapper" class="code-tabs"><ul class="code-tab-list">${codeTabContent}</ul></div>
 <div id="page-content-wrapper" class="body-content container-fluid">${bodyContent}</div>

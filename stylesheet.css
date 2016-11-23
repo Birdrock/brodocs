@@ -111,7 +111,7 @@ ul, li {
 #sidebar-wrapper {
     display: block;
     height: 100%; /* 100% Full-height */
-    width: 15%; /* 0 width - change this with JavaScript */
+    width: 20%; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
@@ -156,14 +156,14 @@ ul, li {
 }*/
 
 #page-content-wrapper {
-    margin-left: 15%;
+    margin-left: 20%;
     padding-top: 60px;
     /*width: 65%;*/
 }
 
 body {
     /*height: 100%;*/
-    background: linear-gradient(90deg, #FFFFFF 63%, dimgrey 37%);
+    background: linear-gradient(90deg, #FFFFFF 65%, dimgrey 35%);
 }
 
 .body-content h1, .body-content h2 {
@@ -211,8 +211,11 @@ body {
     background: lightsteelblue;
 }
 
-.body-content blockquote.code-block, .body-content .code-block code {
-    /*margin-left: 20px;*/
+.body-content pre.code-block code {
+  overflow: auto;
+  overflow-wrap: normal;
+  word-wrap: normal;
+  white-space: pre;
 }
 
 .code-block {
