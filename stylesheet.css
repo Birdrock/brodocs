@@ -151,9 +151,12 @@ ul, li {
     margin-top: 25px;
 }
 
-/*#sidebar-wrapper .nav-level-2.strong-nav {
-    margin-top: 15px;
-}*/
+#sidebar-wrapper .copyright {
+    padding-left: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-decoration: underline;
+}
 
 #page-content-wrapper {
     margin-left: 20%;

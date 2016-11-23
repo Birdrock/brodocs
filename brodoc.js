@@ -265,7 +265,7 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <link rel="stylesheet" href="stylesheet.css" type="text/css">
 </head>
 <body>
-<div id="sidebar-wrapper" class="side-nav side-bar-nav">${navContent}</div>${config.copyright}<div></div>
+<div id="sidebar-wrapper" class="side-nav side-bar-nav">${navContent}<br/><div class="copyright">${config.copyright}</div></div>
 <div id="wrapper">
 <div id="code-tabs-wrapper" class="code-tabs"><ul class="code-tab-list">${codeTabContent}</ul></div>
 <div id="page-content-wrapper" class="body-content container-fluid">${bodyContent}</div>
