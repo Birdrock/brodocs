@@ -184,7 +184,13 @@ body {
 }
 
 .body-content table tr td {
+    overflow-wrap: break-word;
     word-wrap: break-word;
+    /*word-break: break-word;*/
+}
+
+.body-content table tr td a {
+    word-break: break-word;
 }
 
 .body-content p code {
