@@ -22,7 +22,7 @@ Appears In <a href="#nodedaemonendpoints-v1">NodeDaemonEndpoints</a> </aside>
 
 Field        | Description
 ------------ | -----------
-Port <br /> integer | Port number of the given endpoint.
+Port <br /> *integer*  | Port number of the given endpoint.
 
 
 

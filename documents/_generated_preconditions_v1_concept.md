@@ -22,7 +22,7 @@ Appears In <a href="#deleteoptions-v1">DeleteOptions</a> </aside>
 
 Field        | Description
 ------------ | -----------
-uid <br /> string | Specifies the target UID.
+uid <br /> *string*  | Specifies the target UID.
 
 
 

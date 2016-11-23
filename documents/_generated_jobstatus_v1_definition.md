@@ -2,7 +2,7 @@
 
 Group        | Version     | Kind
 ------------ | ---------- | -----------
-Core | v1 | JobStatus
+Batch | v1 | JobStatus
 
 > Example yaml coming soon...
 

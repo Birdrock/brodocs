@@ -80,9 +80,6 @@
       "filename": "_generated_poddisruptionbudget_v1beta1_concept.md"
     },
     {
-      "filename": "_generated_scale_v1_concept.md"
-    },
-    {
       "filename": "_generated_thirdpartyresource_v1beta1_concept.md"
     },
     {
@@ -365,6 +362,9 @@
       "filename": "_generated_selinuxoptions_v1_definition.md"
     },
     {
+      "filename": "_generated_scale_v1_definition.md"
+    },
+    {
       "filename": "_generated_secretkeyselector_v1_definition.md"
     },
     {
@@ -421,5 +421,7 @@
     {
       "filename": "_generated_scale_v1beta1_concept.md"
     }
-  ]
+  ],
+  "title": "Kubernetes API Reference Docs",
+  "copyright": "\u003ca href=\"https://github.com/kubernetes/kubernetes\"\u003eCopyright 2016 The Kubernetes Authors.\u003c/a\u003e"
 }

@@ -1,4 +1,4 @@
-# <strong>Discovery & LB Apis</strong>
+# <strong>DISCOVERY & LOAD BALANCING</strong>
 
 These are responsible for stitching your workloads together into an accessible Loadbalanced Service.  By default,
 [Workloads](#workloads) are only accessible within the cluster, and they must be exposed externally using a either

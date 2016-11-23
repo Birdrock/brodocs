@@ -2,7 +2,7 @@
 
 Group        | Version     | Kind
 ------------ | ---------- | -----------
-Extensions | v1beta1 | ReplicaSetList
+Core | v1beta1 | ReplicaSetList
 
 > Example yaml coming soon...
 

@@ -22,10 +22,10 @@ Appears In <a href="#certificatesigningrequest-v1alpha1">CertificateSigningReque
 
 Field        | Description
 ------------ | -----------
-groups <br /> string array | 
-request <br /> string | Base64-encoded PKCS#10 CSR data
-uid <br /> string | 
-username <br /> string | Information about the requesting user (if relevant) See user.Info interface for details
+groups <br /> *string array*  | 
+request <br /> *string*  | Base64-encoded PKCS#10 CSR data
+uid <br /> *string*  | 
+username <br /> *string*  | Information about the requesting user (if relevant) See user.Info interface for details
 
 
 

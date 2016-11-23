@@ -22,7 +22,7 @@ Appears In <a href="#envvarsource-v1">EnvVarSource</a> </aside>
 
 Field        | Description
 ------------ | -----------
-key <br /> string | The key of the secret to select from.  Must be a valid secret key.
+key <br /> *string*  | The key of the secret to select from.  Must be a valid secret key.
 
 
 

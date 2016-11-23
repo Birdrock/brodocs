@@ -2,7 +2,7 @@
 
 Group        | Version     | Kind
 ------------ | ---------- | -----------
-Extensions | v1beta1 | ReplicaSetStatus
+Core | v1beta1 | ReplicaSetStatus
 
 > Example yaml coming soon...
 

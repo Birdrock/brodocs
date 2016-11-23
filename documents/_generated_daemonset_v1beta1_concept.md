@@ -84,9 +84,9 @@ Appears In <a href="#daemonsetlist-v1beta1">DaemonSetList</a> </aside>
 
 Field        | Description
 ------------ | -----------
-metadata <br /> [ObjectMeta](#objectmeta-v1) | Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
-spec <br /> [DaemonSetSpec](#daemonsetspec-v1beta1) | Spec defines the desired behavior of this daemon set. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
-status <br /> [DaemonSetStatus](#daemonsetstatus-v1beta1) | Status is the current status of this daemon set. This data may be out of date by some window of time. Populated by the system. Read-only. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+metadata <br /> *[ObjectMeta](#objectmeta-v1)*  | Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+spec <br /> *[DaemonSetSpec](#daemonsetspec-v1beta1)*  | Spec defines the desired behavior of this daemon set. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+status <br /> *[DaemonSetStatus](#daemonsetstatus-v1beta1)*  | Status is the current status of this daemon set. This data may be out of date by some window of time. Populated by the system. Read-only. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
 
 
 ### DaemonSetSpec v1beta1
@@ -96,8 +96,8 @@ Appears In <a href="#daemonset-v1beta1">DaemonSet</a> </aside>
 
 Field        | Description
 ------------ | -----------
-selector <br /> [LabelSelector](#labelselector-unversioned) | Selector is a label query over pods that are managed by the daemon set. Must match in order to be controlled. If empty, defaulted to labels on Pod template. More info: http://kubernetes.io/docs/user-guide/labels#label-selectors
-template <br /> [PodTemplateSpec](#podtemplatespec-v1) | Template is the object that describes the pod that will be created. The DaemonSet will create exactly one copy of this pod on every node that matches the template's node selector (or on every node if no node selector is specified). More info: http://kubernetes.io/docs/user-guide/replication-controller#pod-template
+selector <br /> *[LabelSelector](#labelselector-unversioned)*  | Selector is a label query over pods that are managed by the daemon set. Must match in order to be controlled. If empty, defaulted to labels on Pod template. More info: http://kubernetes.io/docs/user-guide/labels#label-selectors
+template <br /> *[PodTemplateSpec](#podtemplatespec-v1)*  | Template is the object that describes the pod that will be created. The DaemonSet will create exactly one copy of this pod on every node that matches the template's node selector (or on every node if no node selector is specified). More info: http://kubernetes.io/docs/user-guide/replication-controller#pod-template
 
 ### DaemonSetStatus v1beta1
 
@@ -106,10 +106,10 @@ Appears In <a href="#daemonset-v1beta1">DaemonSet</a> </aside>
 
 Field        | Description
 ------------ | -----------
-currentNumberScheduled <br /> integer | CurrentNumberScheduled is the number of nodes that are running at least 1 daemon pod and are supposed to run the daemon pod. More info: http://releases.k8s.io/HEAD/docs/admin/daemons.md
-desiredNumberScheduled <br /> integer | DesiredNumberScheduled is the total number of nodes that should be running the daemon pod (including nodes correctly running the daemon pod). More info: http://releases.k8s.io/HEAD/docs/admin/daemons.md
-numberMisscheduled <br /> integer | NumberMisscheduled is the number of nodes that are running the daemon pod, but are not supposed to run the daemon pod. More info: http://releases.k8s.io/HEAD/docs/admin/daemons.md
-numberReady <br /> integer | NumberReady is the number of nodes that should be running the daemon pod and have one or more of the daemon pod running and ready.
+currentNumberScheduled <br /> *integer*  | CurrentNumberScheduled is the number of nodes that are running at least 1 daemon pod and are supposed to run the daemon pod. More info: http://releases.k8s.io/HEAD/docs/admin/daemons.md
+desiredNumberScheduled <br /> *integer*  | DesiredNumberScheduled is the total number of nodes that should be running the daemon pod (including nodes correctly running the daemon pod). More info: http://releases.k8s.io/HEAD/docs/admin/daemons.md
+numberMisscheduled <br /> *integer*  | NumberMisscheduled is the number of nodes that are running the daemon pod, but are not supposed to run the daemon pod. More info: http://releases.k8s.io/HEAD/docs/admin/daemons.md
+numberReady <br /> *integer*  | NumberReady is the number of nodes that should be running the daemon pod and have one or more of the daemon pod running and ready.
 
 ### DaemonSetList v1beta1
 
@@ -117,8 +117,8 @@ numberReady <br /> integer | NumberReady is the number of nodes that should be r
 
 Field        | Description
 ------------ | -----------
-items <br /> [DaemonSet](#daemonset-v1beta1) array | Items is a list of daemon sets.
-metadata <br /> [ListMeta](#listmeta-unversioned) | Standard list metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+items <br /> *[DaemonSet](#daemonset-v1beta1) array*  | Items is a list of daemon sets.
+metadata <br /> *[ListMeta](#listmeta-unversioned)*  | Standard list metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
 
 
 
@@ -275,20 +275,20 @@ create a DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [DaemonSet](#daemonset-v1beta1) | 
+body <br /> *[DaemonSet](#daemonset-v1beta1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [DaemonSet](#daemonset-v1beta1) | OK
+200 <br /> *[DaemonSet](#daemonset-v1beta1)*  | OK
 
 
 ## Replace
@@ -336,21 +336,21 @@ replace the specified DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the DaemonSet
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the DaemonSet
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [DaemonSet](#daemonset-v1beta1) | 
+body <br /> *[DaemonSet](#daemonset-v1beta1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [DaemonSet](#daemonset-v1beta1) | OK
+200 <br /> *[DaemonSet](#daemonset-v1beta1)*  | OK
 
 
 ## Patch
@@ -398,21 +398,21 @@ partially update the specified DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the DaemonSet
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the DaemonSet
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Patch](#patch-unversioned) | 
+body <br /> *[Patch](#patch-unversioned)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [DaemonSet](#daemonset-v1beta1) | OK
+200 <br /> *[DaemonSet](#daemonset-v1beta1)*  | OK
 
 
 ## Delete
@@ -471,23 +471,23 @@ delete a DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the DaemonSet
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the DaemonSet
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [DeleteOptions](#deleteoptions-v1) | 
-gracePeriodSeconds <br />  | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-orphanDependents <br />  | Should the dependent objects be orphaned. If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list.
+body <br /> *[DeleteOptions](#deleteoptions-v1)*  | 
+gracePeriodSeconds  | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+orphanDependents  | Should the dependent objects be orphaned. If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Status](#status-unversioned) | OK
+200 <br /> *[Status](#status-unversioned)*  | OK
 
 
 ## Delete Collection
@@ -535,24 +535,24 @@ delete collection of DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Status](#status-unversioned) | OK
+200 <br /> *[Status](#status-unversioned)*  | OK
 
 
 
@@ -606,22 +606,22 @@ read the specified DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the DaemonSet
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the DaemonSet
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-exact <br />  | Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
-export <br />  | Should this value be exported.  Export strips fields that a user can not specify.
+exact  | Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+export  | Should this value be exported.  Export strips fields that a user can not specify.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [DaemonSet](#daemonset-v1beta1) | OK
+200 <br /> *[DaemonSet](#daemonset-v1beta1)*  | OK
 
 
 ## List
@@ -669,24 +669,24 @@ list or watch objects of kind DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [DaemonSetList](#daemonsetlist-v1beta1) | OK
+200 <br /> *[DaemonSetList](#daemonsetlist-v1beta1)*  | OK
 
 
 ## List All Namespaces
@@ -734,19 +734,19 @@ list or watch objects of kind DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-pretty <br />  | If 'true', then the output is pretty printed.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+pretty  | If 'true', then the output is pretty printed.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [DaemonSetList](#daemonsetlist-v1beta1) | OK
+200 <br /> *[DaemonSetList](#daemonsetlist-v1beta1)*  | OK
 
 
 ## Watch
@@ -794,21 +794,21 @@ watch changes to an object of kind DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-name <br />  | name of the DaemonSet
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+name  | name of the DaemonSet
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Event](#event-versioned) | OK
+200 <br /> *[Event](#event-versioned)*  | OK
 
 
 ## Watch List
@@ -856,20 +856,20 @@ watch individual changes to a list of DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Event](#event-versioned) | OK
+200 <br /> *[Event](#event-versioned)*  | OK
 
 
 ## Watch List All Namespaces
@@ -917,19 +917,19 @@ watch individual changes to a list of DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-pretty <br />  | If 'true', then the output is pretty printed.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+pretty  | If 'true', then the output is pretty printed.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Event](#event-versioned) | OK
+200 <br /> *[Event](#event-versioned)*  | OK
 
 
 
@@ -982,21 +982,21 @@ partially update status of the specified DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the DaemonSet
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the DaemonSet
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Patch](#patch-unversioned) | 
+body <br /> *[Patch](#patch-unversioned)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [DaemonSet](#daemonset-v1beta1) | OK
+200 <br /> *[DaemonSet](#daemonset-v1beta1)*  | OK
 
 
 ## Read Status
@@ -1044,16 +1044,16 @@ read status of the specified DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the DaemonSet
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the DaemonSet
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [DaemonSet](#daemonset-v1beta1) | OK
+200 <br /> *[DaemonSet](#daemonset-v1beta1)*  | OK
 
 
 ## Replace Status
@@ -1101,21 +1101,21 @@ replace status of the specified DaemonSet
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the DaemonSet
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the DaemonSet
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [DaemonSet](#daemonset-v1beta1) | 
+body <br /> *[DaemonSet](#daemonset-v1beta1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [DaemonSet](#daemonset-v1beta1) | OK
+200 <br /> *[DaemonSet](#daemonset-v1beta1)*  | OK
 
 
 

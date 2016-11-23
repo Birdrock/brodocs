@@ -24,9 +24,9 @@ Appears In <a href="#storageclasslist-v1beta1">StorageClassList</a> </aside>
 
 Field        | Description
 ------------ | -----------
-metadata <br /> [ObjectMeta](#objectmeta-v1) | Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
-parameters <br /> object | Parameters holds the parameters for the provisioner that should create volumes of this storage class.
-provisioner <br /> string | Provisioner indicates the type of the provisioner.
+metadata <br /> *[ObjectMeta](#objectmeta-v1)*  | Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+parameters <br /> *object*  | Parameters holds the parameters for the provisioner that should create volumes of this storage class.
+provisioner <br /> *string*  | Provisioner indicates the type of the provisioner.
 
 
 ### StorageClassList v1beta1
@@ -35,8 +35,8 @@ provisioner <br /> string | Provisioner indicates the type of the provisioner.
 
 Field        | Description
 ------------ | -----------
-items <br /> [StorageClass](#storageclass-v1beta1) array | Items is the list of StorageClasses
-metadata <br /> [ListMeta](#listmeta-unversioned) | Standard list metadata More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+items <br /> *[StorageClass](#storageclass-v1beta1) array*  | Items is the list of StorageClasses
+metadata <br /> *[ListMeta](#listmeta-unversioned)*  | Standard list metadata More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
 
 
 
@@ -90,19 +90,19 @@ create a StorageClass
 
 Parameter    | Description
 ------------ | -----------
-pretty <br />  | If 'true', then the output is pretty printed.
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [StorageClass](#storageclass-v1beta1) | 
+body <br /> *[StorageClass](#storageclass-v1beta1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [StorageClass](#storageclass-v1beta1) | OK
+200 <br /> *[StorageClass](#storageclass-v1beta1)*  | OK
 
 
 ## Replace
@@ -150,20 +150,20 @@ replace the specified StorageClass
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the StorageClass
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the StorageClass
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [StorageClass](#storageclass-v1beta1) | 
+body <br /> *[StorageClass](#storageclass-v1beta1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [StorageClass](#storageclass-v1beta1) | OK
+200 <br /> *[StorageClass](#storageclass-v1beta1)*  | OK
 
 
 ## Patch
@@ -211,20 +211,20 @@ partially update the specified StorageClass
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the StorageClass
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the StorageClass
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Patch](#patch-unversioned) | 
+body <br /> *[Patch](#patch-unversioned)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [StorageClass](#storageclass-v1beta1) | OK
+200 <br /> *[StorageClass](#storageclass-v1beta1)*  | OK
 
 
 ## Delete
@@ -272,22 +272,22 @@ delete a StorageClass
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the StorageClass
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the StorageClass
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [DeleteOptions](#deleteoptions-v1) | 
-gracePeriodSeconds <br />  | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-orphanDependents <br />  | Should the dependent objects be orphaned. If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list.
+body <br /> *[DeleteOptions](#deleteoptions-v1)*  | 
+gracePeriodSeconds  | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+orphanDependents  | Should the dependent objects be orphaned. If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Status](#status-unversioned) | OK
+200 <br /> *[Status](#status-unversioned)*  | OK
 
 
 ## Delete Collection
@@ -335,23 +335,23 @@ delete collection of StorageClass
 
 Parameter    | Description
 ------------ | -----------
-pretty <br />  | If 'true', then the output is pretty printed.
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Status](#status-unversioned) | OK
+200 <br /> *[Status](#status-unversioned)*  | OK
 
 
 
@@ -404,21 +404,21 @@ read the specified StorageClass
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the StorageClass
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the StorageClass
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-exact <br />  | Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
-export <br />  | Should this value be exported.  Export strips fields that a user can not specify.
+exact  | Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+export  | Should this value be exported.  Export strips fields that a user can not specify.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [StorageClass](#storageclass-v1beta1) | OK
+200 <br /> *[StorageClass](#storageclass-v1beta1)*  | OK
 
 
 ## List
@@ -466,23 +466,23 @@ list or watch objects of kind StorageClass
 
 Parameter    | Description
 ------------ | -----------
-pretty <br />  | If 'true', then the output is pretty printed.
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [StorageClassList](#storageclasslist-v1beta1) | OK
+200 <br /> *[StorageClassList](#storageclasslist-v1beta1)*  | OK
 
 
 ## Watch
@@ -530,80 +530,20 @@ watch changes to an object of kind StorageClass
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-name <br />  | name of the StorageClass
-pretty <br />  | If 'true', then the output is pretty printed.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+name  | name of the StorageClass
+pretty  | If 'true', then the output is pretty printed.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Event](#event-versioned) | OK
-
-
-## Watch List
-
->bdocs-tab:kubectl `kubectl` Command
-
-```bdocs-tab:kubectl_shell
-
-Coming Soon
-
-```
-
->bdocs-tab:curl `curl` Command (*requires `kubectl proxy` to be running*)
-
-```bdocs-tab:curl_shell
-
-Coming Soon
-
-```
-
->bdocs-tab:kubectl Output
-
-```bdocs-tab:kubectl_json
-
-Coming Soon
-
-```
->bdocs-tab:curl Response Body
-
-```bdocs-tab:curl_json
-
-Coming Soon
-
-```
-
-
-
-watch individual changes to a list of StorageClass
-
-### HTTP Request
-
-`GET /apis/storage.k8s.io/v1beta1/watch/storageclasses`
-
-### Path Parameters
-
-Parameter    | Description
------------- | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-pretty <br />  | If 'true', then the output is pretty printed.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-
-
-### Response
-
-Code         | Description
------------- | -----------
-200 <br /> [Event](#event-versioned) | OK
+200 <br /> *[Event](#event-versioned)*  | OK
 
 
 

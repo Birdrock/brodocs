@@ -22,9 +22,9 @@ Appears In <a href="#envvarsource-v1">EnvVarSource</a> </aside>
 
 Field        | Description
 ------------ | -----------
-containerName <br /> string | Container name: required for volumes, optional for env vars
-divisor <br /> [Quantity](#quantity-resource) | Specifies the output format of the exposed resources, defaults to "1"
-resource <br /> string | Required: resource to select
+containerName <br /> *string*  | Container name: required for volumes, optional for env vars
+divisor <br /> *[Quantity](#quantity-resource)*  | Specifies the output format of the exposed resources, defaults to "1"
+resource <br /> *string*  | Required: resource to select
 
 
 

@@ -2,7 +2,7 @@
 
 Group        | Version     | Kind
 ------------ | ---------- | -----------
-Core | v1beta1 | StorageClassList
+Storage | v1beta1 | StorageClassList
 
 > Example yaml coming soon...
 

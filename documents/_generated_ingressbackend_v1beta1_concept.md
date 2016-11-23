@@ -22,8 +22,8 @@ Appears In <a href="#ingressspec-v1beta1">IngressSpec</a> </aside>
 
 Field        | Description
 ------------ | -----------
-serviceName <br /> string | Specifies the name of the referenced service.
-servicePort <br /> [IntOrString](#intorstring-intstr) | Specifies the port of the referenced service.
+serviceName <br /> *string*  | Specifies the name of the referenced service.
+servicePort <br /> *[IntOrString](#intorstring-intstr)*  | Specifies the port of the referenced service.
 
 
 

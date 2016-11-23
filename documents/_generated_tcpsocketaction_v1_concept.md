@@ -22,7 +22,7 @@ Appears In <a href="#handler-v1">Handler</a> </aside>
 
 Field        | Description
 ------------ | -----------
-port <br /> [IntOrString](#intorstring-intstr) | Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
+port <br /> *[IntOrString](#intorstring-intstr)*  | Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
 
 
 

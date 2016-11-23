@@ -22,10 +22,10 @@ Appears In <a href="#podsecuritycontext-v1">PodSecurityContext</a> <a href="#sec
 
 Field        | Description
 ------------ | -----------
-level <br /> string | Level is SELinux level label that applies to the container.
-role <br /> string | Role is a SELinux role label that applies to the container.
-type <br /> string | Type is a SELinux type label that applies to the container.
-user <br /> string | User is a SELinux user label that applies to the container.
+level <br /> *string*  | Level is SELinux level label that applies to the container.
+role <br /> *string*  | Role is a SELinux role label that applies to the container.
+type <br /> *string*  | Type is a SELinux type label that applies to the container.
+user <br /> *string*  | User is a SELinux user label that applies to the container.
 
 
 

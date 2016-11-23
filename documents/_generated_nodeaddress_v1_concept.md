@@ -22,8 +22,8 @@ Appears In <a href="#nodestatus-v1">NodeStatus</a> </aside>
 
 Field        | Description
 ------------ | -----------
-address <br /> string | The node address.
-type <br /> string | Node address type, one of Hostname, ExternalIP or InternalIP.
+address <br /> *string*  | The node address.
+type <br /> *string*  | Node address type, one of Hostname, ExternalIP or InternalIP.
 
 
 

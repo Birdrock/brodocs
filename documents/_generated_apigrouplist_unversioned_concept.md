@@ -21,7 +21,7 @@ APIGroupList is a list of APIGroup, to allow clients to discover the API at /api
 
 Field        | Description
 ------------ | -----------
-groups <br /> [APIGroup](#apigroup-unversioned) array | groups is a list of APIGroup.
+groups <br /> *[APIGroup](#apigroup-unversioned) array*  | groups is a list of APIGroup.
 
 
 

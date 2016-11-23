@@ -22,9 +22,9 @@ Appears In <a href="#containerstatus-v1">ContainerStatus</a> </aside>
 
 Field        | Description
 ------------ | -----------
-running <br /> [ContainerStateRunning](#containerstaterunning-v1) | Details about a running container
-terminated <br /> [ContainerStateTerminated](#containerstateterminated-v1) | Details about a terminated container
-waiting <br /> [ContainerStateWaiting](#containerstatewaiting-v1) | Details about a waiting container
+running <br /> *[ContainerStateRunning](#containerstaterunning-v1)*  | Details about a running container
+terminated <br /> *[ContainerStateTerminated](#containerstateterminated-v1)*  | Details about a terminated container
+waiting <br /> *[ContainerStateWaiting](#containerstatewaiting-v1)*  | Details about a waiting container
 
 
 

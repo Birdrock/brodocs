@@ -22,8 +22,8 @@ Appears In <a href="#selfsubjectaccessreviewspec-v1beta1">SelfSubjectAccessRevie
 
 Field        | Description
 ------------ | -----------
-path <br /> string | Path is the URL path of the request
-verb <br /> string | Verb is the standard HTTP verb
+path <br /> *string*  | Path is the URL path of the request
+verb <br /> *string*  | Verb is the standard HTTP verb
 
 
 

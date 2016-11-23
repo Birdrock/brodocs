@@ -22,10 +22,10 @@ Appears In <a href="#clusterrolebinding-v1alpha1">ClusterRoleBinding</a> <a href
 
 Field        | Description
 ------------ | -----------
-apiVersion <br /> string | APIVersion holds the API group and version of the referenced object.
-kind <br /> string | Kind of object being referenced. Values defined by this API group are "User", "Group", and "ServiceAccount". If the Authorizer does not recognized the kind value, the Authorizer should report an error.
-name <br /> string | Name of the object being referenced.
-namespace <br /> string | Namespace of the referenced object.  If the object kind is non-namespace, such as "User" or "Group", and this value is not empty the Authorizer should report an error.
+apiVersion <br /> *string*  | APIVersion holds the API group and version of the referenced object.
+kind <br /> *string*  | Kind of object being referenced. Values defined by this API group are "User", "Group", and "ServiceAccount". If the Authorizer does not recognized the kind value, the Authorizer should report an error.
+name <br /> *string*  | Name of the object being referenced.
+namespace <br /> *string*  | Namespace of the referenced object.  If the object kind is non-namespace, such as "User" or "Group", and this value is not empty the Authorizer should report an error.
 
 
 

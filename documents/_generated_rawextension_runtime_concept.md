@@ -49,7 +49,7 @@ Appears In <a href="#event-versioned">Event</a> <a href="#policyrule-v1alpha1">P
 
 Field        | Description
 ------------ | -----------
-Raw <br /> string | Raw is the underlying serialization of this object.
+Raw <br /> *string*  | Raw is the underlying serialization of this object.
 
 
 

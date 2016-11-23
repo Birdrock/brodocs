@@ -22,7 +22,7 @@ Appears In <a href="#ingress-v1beta1">Ingress</a> </aside>
 
 Field        | Description
 ------------ | -----------
-loadBalancer <br /> [LoadBalancerStatus](#loadbalancerstatus-v1) | LoadBalancer contains the current status of the load-balancer.
+loadBalancer <br /> *[LoadBalancerStatus](#loadbalancerstatus-v1)*  | LoadBalancer contains the current status of the load-balancer.
 
 
 
@@ -77,21 +77,21 @@ replace status of the specified Ingress
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Ingress
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Ingress
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Ingress](#ingress-v1beta1) | 
+body <br /> *[Ingress](#ingress-v1beta1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Ingress](#ingress-v1beta1) | OK
+200 <br /> *[Ingress](#ingress-v1beta1)*  | OK
 
 
 ## Patch
@@ -139,21 +139,21 @@ partially update status of the specified Ingress
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Ingress
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Ingress
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Patch](#patch-unversioned) | 
+body <br /> *[Patch](#patch-unversioned)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Ingress](#ingress-v1beta1) | OK
+200 <br /> *[Ingress](#ingress-v1beta1)*  | OK
 
 
 
@@ -206,16 +206,16 @@ read status of the specified Ingress
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Ingress
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Ingress
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Ingress](#ingress-v1beta1) | OK
+200 <br /> *[Ingress](#ingress-v1beta1)*  | OK
 
 
 

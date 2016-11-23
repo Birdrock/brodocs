@@ -22,8 +22,8 @@ Appears In <a href="#securitycontext-v1">SecurityContext</a> </aside>
 
 Field        | Description
 ------------ | -----------
-add <br /> string array | Added capabilities
-drop <br /> string array | Removed capabilities
+add <br /> *string array*  | Added capabilities
+drop <br /> *string array*  | Removed capabilities
 
 
 

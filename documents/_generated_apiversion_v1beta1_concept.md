@@ -22,7 +22,7 @@ Appears In <a href="#thirdpartyresource-v1beta1">ThirdPartyResource</a> </aside>
 
 Field        | Description
 ------------ | -----------
-name <br /> string | Name of this version (e.g. 'v1').
+name <br /> *string*  | Name of this version (e.g. 'v1').
 
 
 

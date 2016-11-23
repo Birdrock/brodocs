@@ -22,9 +22,9 @@ Appears In <a href="#clusterrolebinding-v1alpha1">ClusterRoleBinding</a> <a href
 
 Field        | Description
 ------------ | -----------
-apiGroup <br /> string | APIGroup is the group for the resource being referenced
-kind <br /> string | Kind is the type of resource being referenced
-name <br /> string | Name is the name of resource being referenced
+apiGroup <br /> *string*  | APIGroup is the group for the resource being referenced
+kind <br /> *string*  | Kind is the type of resource being referenced
+name <br /> *string*  | Name is the name of resource being referenced
 
 
 
