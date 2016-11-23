@@ -8,27 +8,29 @@ ul, li {
 .body-content aside {
     padding-top: 1em;
     padding-bottom: 1em;
+    padding-left: 1em;
     text-shadow: 0 1px 0 #c6dde9;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: #8fbcd4;
-    line-height: 1.6
+    line-height: 1.6;
+    border-radius: 10px;
 }
 
 .body-content aside.warning {
     background-color: #c97a7e;
-    text-shadow: 0 1px 0 #dfb0b3
+    text-shadow: 0 1px 0 #dfb0b3;
 }
 
 .body-content aside.success {
     background-color: #6ac174;
-    text-shadow: 0 1px 0 #a0d7a6
+    text-shadow: 0 1px 0 #a0d7a6;
 }
 
 .body-content aside:before {
     vertical-align: middle;
     padding-right: 0.5em;
-    font-size: 14px
+    font-size: 14px;
 }
 
 .body-content aside.warning:before,.body-content aside.notice:before,.body-content aside.success:before {
@@ -37,7 +39,7 @@ ul, li {
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
-    line-height: 1
+    line-height: 1;
 }
 
 .body-content aside.warning:before {
@@ -51,48 +53,48 @@ ul, li {
 .body-content hr {
     margin: 2em 0;
     border-top: 2px solid #576575;
-    border-bottom: 2px solid #eaf2f6
+    border-bottom: 2px solid #eaf2f6;
 }
 
 .body-content table {
     margin-bottom: 1em;
-    overflow: auto
+    overflow: auto;
 }
 
 .body-content table th,.body-content table td {
     text-align: left;
     vertical-align: top;
-    line-height: 1.6
+    line-height: 1.6;
 }
 
 .body-content table th {
     padding: 5px 10px;
     border-bottom: 1px solid #ccc;
-    vertical-align: bottom
+    vertical-align: bottom;
 }
 
 .body-content table td {
-    padding: 10px
+    padding: 10px;
 }
 
 .body-content table tr:last-child {
-    border-bottom: 1px solid #ccc
+    border-bottom: 1px solid #ccc;
 }
 
 .body-content table tr:nth-child(odd)>td {
-    background-color: #f9fbfc
+    background-color: #f9fbfc;
 }
 
 .body-content table tr:nth-child(even)>td {
-    background-color: #f3f7fa
+    background-color: #f3f7fa;
 }
 
 .body-content dt {
-    font-weight: bold
+    font-weight: bold;
 }
 
 .body-content dd {
-    margin-left: 15px
+    margin-left: 15px;
 }
 
 .body-content p,.body-content li,.body-content dt,.body-content dd {
@@ -158,7 +160,7 @@ body {
     /*border-image: linear-gradient(90deg, dimgrey 65%, #FFFFFF 35%);*/
 }
 
-.body-content h3, .body-content h4, .body-content h5, .body-content h6, .body-content p, .body-content aside {
+.body-content > h3, .body-content > h4, .body-content > h5, .body-content > h6, .body-content > p, .body-content > aside, .body-content > ul > li {
     width: 55%;
     padding-top: 20px;
 }
@@ -182,9 +184,14 @@ body {
     font-size: smaller;
 }
 
-.body-content blockquote p {
-    padding-top: 0;
+.body-content blockquote {
+    border-left: 0;
+    border-radius: 5px;
+}
+
+.body-content blockquote p, .body-content pre {
     color: black;
+    font-size: 13px;
 }
 
 .body-content blockquote.code-block {

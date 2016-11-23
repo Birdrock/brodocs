@@ -94,12 +94,10 @@ $(document).ready(function() {
         }
         if (!prevElemToken) {
             getNavElemNode(activeElemToken).addClass('selected');
-            console.log(activeElemToken);
             prevElemToken = activeElemToken;
             return;
         }
         if (activeElemToken !== prevElemToken) {
-            console.log(activeElemToken);
             getNavElemNode(prevElemToken).removeClass('selected');
             getNavElemNode(activeElemToken).addClass('selected');
             prevElemToken = activeElemToken;
