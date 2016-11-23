@@ -42,7 +42,7 @@ var idAffix = 0;
 var uniqueNav = [];
 renderer.heading = (text, level, raw) => {
     var id = raw.toLowerCase().replace(/[^\w]+/g, '-');
-    if ((uniqueNav.indexOf(id) !== -1) && (level > 1)) {
+    if ((uniqueNav.indexOf(id) !== -1) && (level === 2)) {
         idAffix++;
         id += '-' + idAffix;
     } else {
@@ -174,6 +174,7 @@ function generateNavItems(navObjs) {
                 currentNestArray.length = 0;
 
                 navSectionArrayClone = Object.assign([], navSectionArray);
+                console.log("$$$$$$    ", navSectionArray);
                 navStrongSectionArray.push({section: obj.id, subsections: navSectionArrayClone});
                 navSectionArray.length = 0;
             } else {
@@ -198,6 +199,7 @@ function generateNavItems(navObjs) {
                 navStrongSectionArray.push(obj);
             });
             navSectionArrayClone = Object.assign([], navStrongSectionArray);
+            navStrongSectionArray.length = 0;
             navArrayInvert.push({section: obj.id, subsections: navSectionArrayClone});
             navSectionArray.length = 0;
         }
@@ -263,6 +265,7 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <div id="page-content-wrapper" class="body-content container-fluid">${bodyContent}</div>
 </div>
 <script src="jquery-3.1.1.min.js"></script>
+<script src="jquery.visible.min.js"></script>
 <script src="navData.js"></script>
 <script src="scroll.js"></script>
 <!--<script src="actions.js"></script>-->

@@ -1,13 +1,19 @@
 /* Github CSS overrides */
 ul, li {
     margin: 0;
+    padding-left: 10px
 }
 
 /* Brodoc CSS */
 
+#wrapper {
+    display: block;
+}
+
 #sidebar-wrapper {
+    display: block;
     height: 100%; /* 100% Full-height */
-    width: 20%; /* 0 width - change this with JavaScript */
+    width: 15%; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
@@ -39,7 +45,7 @@ ul, li {
 }
 
 #page-content-wrapper {
-    margin-left: 20%;
+    margin-left: 15%;
     padding-top: 60px;
     /*width: 65%;*/
 }
