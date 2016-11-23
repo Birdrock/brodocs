@@ -2,7 +2,7 @@
 
 Group        | Version     | Kind
 ------------ | ---------- | -----------
-Certificates | v1alpha1 | CertificateSigningRequestList
+Core | v1alpha1 | CertificateSigningRequestList
 
 > Example yaml coming soon...
 

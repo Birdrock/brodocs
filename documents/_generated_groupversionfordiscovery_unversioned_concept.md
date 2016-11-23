@@ -22,8 +22,8 @@ Appears In <a href="#apigroup-unversioned">APIGroup</a> </aside>
 
 Field        | Description
 ------------ | -----------
-groupVersion <br /> string | groupVersion specifies the API group and version in the form "group/version"
-version <br /> string | version specifies the version in the form of "version". This is to save the clients the trouble of splitting the GroupVersion.
+groupVersion <br /> *string*  | groupVersion specifies the API group and version in the form "group/version"
+version <br /> *string*  | version specifies the version in the form of "version". This is to save the clients the trouble of splitting the GroupVersion.
 
 
 

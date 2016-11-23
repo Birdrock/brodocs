@@ -22,8 +22,8 @@ Appears In <a href="#event-v1">Event</a> </aside>
 
 Field        | Description
 ------------ | -----------
-component <br /> string | Component from which the event is generated.
-host <br /> string | Node name on which the event is generated.
+component <br /> *string*  | Component from which the event is generated.
+host <br /> *string*  | Node name on which the event is generated.
 
 
 

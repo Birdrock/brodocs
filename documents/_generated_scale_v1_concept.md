@@ -21,9 +21,9 @@ Scale represents a scaling request for a resource.
 
 Field        | Description
 ------------ | -----------
-metadata <br /> [ObjectMeta](#objectmeta-v1) | Standard object metadata; More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata.
-spec <br /> [ScaleSpec](#scalespec-v1) | defines the behavior of the scale. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status.
-status <br /> [ScaleStatus](#scalestatus-v1) | current status of the scale. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status. Read-only.
+metadata <br /> *[ObjectMeta](#objectmeta-v1)*  | Standard object metadata; More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata.
+spec <br /> *[ScaleSpec](#scalespec-v1)*  | defines the behavior of the scale. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status.
+status <br /> *[ScaleStatus](#scalestatus-v1)*  | current status of the scale. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status. Read-only.
 
 
 ### ScaleSpec v1
@@ -33,7 +33,7 @@ Appears In <a href="#scale-v1">Scale</a> </aside>
 
 Field        | Description
 ------------ | -----------
-replicas <br /> integer | desired number of instances for the scaled object.
+replicas <br /> *integer*  | desired number of instances for the scaled object.
 
 ### ScaleStatus v1
 
@@ -42,8 +42,8 @@ Appears In <a href="#scale-v1">Scale</a> </aside>
 
 Field        | Description
 ------------ | -----------
-replicas <br /> integer | actual number of observed instances of the scaled object.
-selector <br /> string | label query over pods that should match the replicas count. This is same as the label selector but in the string format to avoid introspection by clients. The string will be in the same format as the query-param syntax. More info about label selectors: http://kubernetes.io/docs/user-guide/labels#label-selectors
+replicas <br /> *integer*  | actual number of observed instances of the scaled object.
+selector <br /> *string*  | label query over pods that should match the replicas count. This is same as the label selector but in the string format to avoid introspection by clients. The string will be in the same format as the query-param syntax. More info about label selectors: http://kubernetes.io/docs/user-guide/labels#label-selectors
 
 
 
@@ -97,16 +97,16 @@ read scale of the specified Scale
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Scale
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Scale
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Scale](#scale-v1) | OK
+200 <br /> *[Scale](#scale-v1)*  | OK
 
 
 ## Replace Scale
@@ -154,21 +154,21 @@ replace scale of the specified Scale
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Scale
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Scale
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Scale](#scale-v1) | 
+body <br /> *[Scale](#scale-v1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Scale](#scale-v1) | OK
+200 <br /> *[Scale](#scale-v1)*  | OK
 
 
 ## Patch Scale
@@ -216,21 +216,21 @@ partially update scale of the specified Scale
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Scale
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Scale
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Patch](#patch-unversioned) | 
+body <br /> *[Patch](#patch-unversioned)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Scale](#scale-v1) | OK
+200 <br /> *[Scale](#scale-v1)*  | OK
 
 
 

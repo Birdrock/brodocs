@@ -22,8 +22,8 @@ Appears In <a href="#selfsubjectaccessreview-v1beta1">SelfSubjectAccessReview</a
 
 Field        | Description
 ------------ | -----------
-nonResourceAttributes <br /> [NonResourceAttributes](#nonresourceattributes-v1beta1) | NonResourceAttributes describes information for a non-resource access request
-resourceAttributes <br /> [ResourceAttributes](#resourceattributes-v1beta1) | ResourceAuthorizationAttributes describes information for a resource access request
+nonResourceAttributes <br /> *[NonResourceAttributes](#nonresourceattributes-v1beta1)*  | NonResourceAttributes describes information for a non-resource access request
+resourceAttributes <br /> *[ResourceAttributes](#resourceattributes-v1beta1)*  | ResourceAuthorizationAttributes describes information for a resource access request
 
 
 

@@ -1,4 +1,4 @@
-# <strong>Metadata Apis</strong>
+# <strong>METADATA</strong>
 
 These are responsible for configuring behavior of your other Resources within the Cluster.
 

@@ -22,7 +22,7 @@ Appears In <a href="#service-v1">Service</a> </aside>
 
 Field        | Description
 ------------ | -----------
-loadBalancer <br /> [LoadBalancerStatus](#loadbalancerstatus-v1) | LoadBalancer contains the current status of the load-balancer, if one is present.
+loadBalancer <br /> *[LoadBalancerStatus](#loadbalancerstatus-v1)*  | LoadBalancer contains the current status of the load-balancer, if one is present.
 
 
 
@@ -77,21 +77,21 @@ replace status of the specified Service
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Service
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Service
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Service](#service-v1) | 
+body <br /> *[Service](#service-v1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Service](#service-v1) | OK
+200 <br /> *[Service](#service-v1)*  | OK
 
 
 ## Patch
@@ -139,21 +139,21 @@ partially update status of the specified Service
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Service
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Service
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Patch](#patch-unversioned) | 
+body <br /> *[Patch](#patch-unversioned)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Service](#service-v1) | OK
+200 <br /> *[Service](#service-v1)*  | OK
 
 
 
@@ -206,16 +206,16 @@ read status of the specified Service
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Service
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Service
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Service](#service-v1) | OK
+200 <br /> *[Service](#service-v1)*  | OK
 
 
 

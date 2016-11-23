@@ -1,66 +1,34 @@
-# <strong>API Overview</strong>
+# <strong>API OVERVIEW</strong>
 
-Welcome to the Kubernetes API! You can use our API to access Kubernetes API endpoints to read and write Kubernetes
+Welcome to the Kubernetes API.  You can use our API to access Kubernetes API endpoints to read and write Kubernetes
 resource objects.
 
-## Resource Object Categories
+## Resource Categories
 
 This is a highlevel overview of the basic types of resources provide by the Kubernetes API and their primary functions.
 
-### Workload Resources
+**Workloads** *Run your containers*: These are responsible for managing and running your containers on the cluster.
 
-*Run your containers*.
+**Discovery & LB Resources** *Access your containers*: These are responsible for stitching your workloads together into an externally accessible Loadbalanced Service.
 
-Workloads are responsible for managing and running your containers on the cluster.
+**Config & Storage Resources** *Inject initialization data into your containers*: These are responsible for injecting data into your applications and persisting data externally to your container.
 
-### Discovery & LB Resources
+**Cluster Resources** *Manage your cluster*: These are responsible for defining configuration of the cluster itself, and are generally only used by cluster operators.
 
-*Access your containers*.
-
-These are responsible for stitching your workloads together into an externally accessible Loadbalanced Service.
-
-### Config & Storage Resources
-
-*Inject initialization data into your containers*
-
-These are responsible for injecting data into your applications and persisting data externally to your container.
-
-### Cluster Resources
-
-*Manage your cluster*.
-
-These are responsible for defining configuration of the cluster itself, and are generally only used by cluster operators.
-
-### Meta Resources
-
-*Configure resource meta behavior*.
-
-These are responsible for configuring behavior of your other Resources within the Cluster.
+**Metadata Resources** *Configure resource meta behavior*: These are responsible for configuring behavior of your other Resources within the Cluster.
 
 ------------
 
 ## Resource Objects
 
-Resource objects have 3 components:
+Resource objects typically have 3 components:
 
-### *ResourceSpec*
-
-This is defined by the user and describes the desired state of system.  Fill this in when creating or updating an
+- **ResourceSpec**: This is defined by the user and describes the desired state of system.  Fill this in when creating or updating an
 object.
-
-### *ResourceStatus*
-
-This is filled in by the server and reports the current state of the system.  Only kubernetes components should fill
+- **ResourceStatus**: This is filled in by the server and reports the current state of the system.  Only kubernetes components should fill
 this in
-
-### *Resource ObjectMeta*
-
-This is metadata about the resource, such as its name, type, api version, annotations, and labels.  This contains
+- **Resource ObjectMeta**: This is metadata about the resource, such as its name, type, api version, annotations, and labels.  This contains
 fields that maybe updated both by the end user and the system (e.g. annotations)
-
-### *ResourceList*
-
-This is used to return a list of resources from an api endpoint.
 
 ------------
 
@@ -68,17 +36,14 @@ This is used to return a list of resources from an api endpoint.
 
 Most resources provide the following Operations:
 
-### Create:
-
+#### Create:
 Create operations will create the resource in the storage backend.  After a resource is create the system will apply
 the desired state.
 
-### Update:
-
+#### Update:
 Updates come in 2 forms: **Replace** and **Patch**
 
 **Replace**:
-
 Replacing a resource object will update the resource by replacing the existing spec with the provided one.  For
 read-then-write operations this is safe because an optimistic lock failure will occur if the resource was modified
 between the read and write.  *Note*: The *Resource*Status will be ignored by the system and will not be updated.
@@ -89,7 +54,6 @@ replacing a *ConfigMap* or *Secret* resource will not result in all *Pod*s seein
 restarted out of band.
 
 **Patch**:
-
 Patch will apply a change to a specific field.  How the change is merged is defined per field.  Lists may either be
 replaced or merged.  Merging lists will not preserve ordering.
 
@@ -98,7 +62,7 @@ replaced or merged.  Merging lists will not preserve ordering.
  complex types, arrays and maps, how the patch is applied is defined on a per-field basis and may either replace
  the field's current value, or merge the contents into the current value.*
 
-### Read
+#### Read
 
 Reads come in 3 forms: **Get**, **List** and **Watch**
 
@@ -110,25 +74,19 @@ Reads come in 3 forms: **Get**, **List** and **Watch**
 
 **Watch**: Watch will stream results for an object(s) as it is updated.  Similar to a callback, watch is used to respond to resource changes.
 
-### Delete
+#### Delete
 
 Delete will delete a resource.  Depending on the specific resource, child objects may or may not be garbage collected by the server.  See
 notes on specific resource objects for details.
 
-## Other Operations
+#### Additional Operations
 
-Resources may define additional operations specific to them.
+Resources may define additional operations specific to that resource type.
 
-### Rollback
+**Rollback**: Rollback a PodTemplate to a previous version.  Only available for some resource types.
 
-Rollback a PodTemplate to a previous version.
+**Read / Write Scale**: Read or Update the number of replicas for the given resource.  Only available for some resource types.
 
-### Read / Write Scale
-
-Read or Update the number of replicas for the given resource.
-
-### Read / Write Status
-
-Read or Update the Status for a resource object.  The Status can only changed through these update operations.
+**Read / Write Status**: Read or Update the Status for a resource object.  The Status can only changed through these update operations.
 
 ------------

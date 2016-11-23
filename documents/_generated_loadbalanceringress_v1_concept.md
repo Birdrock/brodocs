@@ -22,8 +22,8 @@ Appears In <a href="#loadbalancerstatus-v1">LoadBalancerStatus</a> </aside>
 
 Field        | Description
 ------------ | -----------
-hostname <br /> string | Hostname is set for load-balancer ingress points that are DNS based (typically AWS load-balancers)
-ip <br /> string | IP is set for load-balancer ingress points that are IP based (typically GCE or OpenStack load-balancers)
+hostname <br /> *string*  | Hostname is set for load-balancer ingress points that are DNS based (typically AWS load-balancers)
+ip <br /> *string*  | IP is set for load-balancer ingress points that are IP based (typically GCE or OpenStack load-balancers)
 
 
 

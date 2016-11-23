@@ -22,7 +22,7 @@ Appears In <a href="#nodestatus-v1">NodeStatus</a> </aside>
 
 Field        | Description
 ------------ | -----------
-kubeletEndpoint <br /> [DaemonEndpoint](#daemonendpoint-v1) | Endpoint on which Kubelet is listening.
+kubeletEndpoint <br /> *[DaemonEndpoint](#daemonendpoint-v1)*  | Endpoint on which Kubelet is listening.
 
 
 

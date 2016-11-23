@@ -2,7 +2,7 @@
 
 Group        | Version     | Kind
 ------------ | ---------- | -----------
-Extensions | v1beta1 | DeploymentList
+Core | v1beta1 | DeploymentList
 
 > Example yaml coming soon...
 

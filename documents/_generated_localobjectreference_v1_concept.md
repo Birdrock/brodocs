@@ -22,7 +22,7 @@ Appears In <a href="#podspec-v1">PodSpec</a> <a href="#serviceaccount-v1">Servic
 
 Field        | Description
 ------------ | -----------
-name <br /> string | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+name <br /> *string*  | Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
 
 
 

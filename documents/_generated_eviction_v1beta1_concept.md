@@ -21,8 +21,8 @@ Eviction evicts a pod from its node subject to certain policies and safety const
 
 Field        | Description
 ------------ | -----------
-deleteOptions <br /> [DeleteOptions](#deleteoptions-v1) | DeleteOptions may be provided
-metadata <br /> [ObjectMeta](#objectmeta-v1) | ObjectMeta describes the pod that is being evicted.
+deleteOptions <br /> *[DeleteOptions](#deleteoptions-v1)*  | DeleteOptions may be provided
+metadata <br /> *[ObjectMeta](#objectmeta-v1)*  | ObjectMeta describes the pod that is being evicted.
 
 
 

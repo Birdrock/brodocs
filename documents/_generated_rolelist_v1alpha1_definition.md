@@ -2,7 +2,7 @@
 
 Group        | Version     | Kind
 ------------ | ---------- | -----------
-RbacAuthorization | v1alpha1 | RoleList
+Core | v1alpha1 | RoleList
 
 > Example yaml coming soon...
 

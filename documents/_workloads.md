@@ -1,4 +1,4 @@
-# <strong>Workloads Apis</strong>
+# <strong>WORKLOADS</strong>
 
 These are responsible for managing and running your containers on the cluster.  [Containers](#container-v1) are created
 by Controllers through [Pods](#pod-v1).  Pods run Containers and provide environmental dependencies such as shared or

@@ -29,9 +29,9 @@ Appears In <a href="#endpoints-v1">Endpoints</a> </aside>
 
 Field        | Description
 ------------ | -----------
-addresses <br /> [EndpointAddress](#endpointaddress-v1) array | IP addresses which offer the related ports that are marked as ready. These endpoints should be considered safe for load balancers and clients to utilize.
-notReadyAddresses <br /> [EndpointAddress](#endpointaddress-v1) array | IP addresses which offer the related ports but are not currently marked as ready because they have not yet finished starting, have recently failed a readiness check, or have recently failed a liveness check.
-ports <br /> [EndpointPort](#endpointport-v1) array | Port numbers available on the related IP addresses.
+addresses <br /> *[EndpointAddress](#endpointaddress-v1) array*  | IP addresses which offer the related ports that are marked as ready. These endpoints should be considered safe for load balancers and clients to utilize.
+notReadyAddresses <br /> *[EndpointAddress](#endpointaddress-v1) array*  | IP addresses which offer the related ports but are not currently marked as ready because they have not yet finished starting, have recently failed a readiness check, or have recently failed a liveness check.
+ports <br /> *[EndpointPort](#endpointport-v1) array*  | Port numbers available on the related IP addresses.
 
 
 

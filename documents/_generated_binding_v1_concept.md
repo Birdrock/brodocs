@@ -21,8 +21,8 @@ Binding ties one object to another. For example, a pod is bound to a node by a s
 
 Field        | Description
 ------------ | -----------
-metadata <br /> [ObjectMeta](#objectmeta-v1) | Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
-target <br /> [ObjectReference](#objectreference-v1) | The target object that you want to bind to the standard object.
+metadata <br /> *[ObjectMeta](#objectmeta-v1)*  | Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+target <br /> *[ObjectReference](#objectreference-v1)*  | The target object that you want to bind to the standard object.
 
 
 
@@ -77,16 +77,16 @@ create a Binding
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Binding](#binding-v1) | 
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+body <br /> *[Binding](#binding-v1)*  | 
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Binding](#binding-v1) | OK
+200 <br /> *[Binding](#binding-v1)*  | OK
 
 
 

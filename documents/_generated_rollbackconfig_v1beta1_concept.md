@@ -22,7 +22,7 @@ Appears In <a href="#deploymentrollback-v1beta1">DeploymentRollback</a> <a href=
 
 Field        | Description
 ------------ | -----------
-revision <br /> integer | The revision to rollback to. If set to 0, rollbck to the last revision.
+revision <br /> *integer*  | The revision to rollback to. If set to 0, rollbck to the last revision.
 
 
 

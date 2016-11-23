@@ -22,7 +22,7 @@ Appears In <a href="#tokenreview-v1beta1">TokenReview</a> </aside>
 
 Field        | Description
 ------------ | -----------
-token <br /> string | Token is the opaque bearer token.
+token <br /> *string*  | Token is the opaque bearer token.
 
 
 

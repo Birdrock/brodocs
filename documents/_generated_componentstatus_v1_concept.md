@@ -22,8 +22,8 @@ Appears In <a href="#componentstatuslist-v1">ComponentStatusList</a> </aside>
 
 Field        | Description
 ------------ | -----------
-conditions <br /> [ComponentCondition](#componentcondition-v1) array | List of component conditions observed
-metadata <br /> [ObjectMeta](#objectmeta-v1) | Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+conditions <br /> *[ComponentCondition](#componentcondition-v1) array*  | List of component conditions observed
+metadata <br /> *[ObjectMeta](#objectmeta-v1)*  | Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
 
 
 ### ComponentStatusList v1
@@ -32,8 +32,8 @@ metadata <br /> [ObjectMeta](#objectmeta-v1) | Standard object's metadata. More 
 
 Field        | Description
 ------------ | -----------
-items <br /> [ComponentStatus](#componentstatus-v1) array | List of ComponentStatus objects.
-metadata <br /> [ListMeta](#listmeta-unversioned) | Standard list metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+items <br /> *[ComponentStatus](#componentstatus-v1) array*  | List of ComponentStatus objects.
+metadata <br /> *[ListMeta](#listmeta-unversioned)*  | Standard list metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
 
 
 
@@ -87,15 +87,15 @@ read the specified ComponentStatus
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the ComponentStatus
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the ComponentStatus
+pretty  | If 'true', then the output is pretty printed.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [ComponentStatus](#componentstatus-v1) | OK
+200 <br /> *[ComponentStatus](#componentstatus-v1)*  | OK
 
 
 ## List
@@ -143,19 +143,19 @@ list objects of kind ComponentStatus
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-pretty <br />  | If 'true', then the output is pretty printed.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+pretty  | If 'true', then the output is pretty printed.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [ComponentStatusList](#componentstatuslist-v1) | OK
+200 <br /> *[ComponentStatusList](#componentstatuslist-v1)*  | OK
 
 
 

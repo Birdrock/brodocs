@@ -21,9 +21,9 @@ LocalSubjectAccessReview checks whether or not a user or group can perform an ac
 
 Field        | Description
 ------------ | -----------
-metadata <br /> [ObjectMeta](#objectmeta-v1) | 
-spec <br /> [SubjectAccessReviewSpec](#subjectaccessreviewspec-v1beta1) | Spec holds information about the request being evaluated.  spec.namespace must be equal to the namespace you made the request against.  If empty, it is defaulted.
-status <br /> [SubjectAccessReviewStatus](#subjectaccessreviewstatus-v1beta1) | Status is filled in by the server and indicates whether the request is allowed or not
+metadata <br /> *[ObjectMeta](#objectmeta-v1)*  | 
+spec <br /> *[SubjectAccessReviewSpec](#subjectaccessreviewspec-v1beta1)*  | Spec holds information about the request being evaluated.  spec.namespace must be equal to the namespace you made the request against.  If empty, it is defaulted.
+status <br /> *[SubjectAccessReviewStatus](#subjectaccessreviewstatus-v1beta1)*  | Status is filled in by the server and indicates whether the request is allowed or not
 
 
 
@@ -78,16 +78,16 @@ create a LocalSubjectAccessReview
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [LocalSubjectAccessReview](#localsubjectaccessreview-v1beta1) | 
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+body <br /> *[LocalSubjectAccessReview](#localsubjectaccessreview-v1beta1)*  | 
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [LocalSubjectAccessReview](#localsubjectaccessreview-v1beta1) | OK
+200 <br /> *[LocalSubjectAccessReview](#localsubjectaccessreview-v1beta1)*  | OK
 
 
 

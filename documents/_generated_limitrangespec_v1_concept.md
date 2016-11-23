@@ -22,7 +22,7 @@ Appears In <a href="#limitrange-v1">LimitRange</a> </aside>
 
 Field        | Description
 ------------ | -----------
-limits <br /> [LimitRangeItem](#limitrangeitem-v1) array | Limits is the list of LimitRangeItem objects that are enforced.
+limits <br /> *[LimitRangeItem](#limitrangeitem-v1) array*  | Limits is the list of LimitRangeItem objects that are enforced.
 
 
 

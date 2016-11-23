@@ -21,8 +21,8 @@ list of horizontal pod autoscaler objects.
 
 Field        | Description
 ------------ | -----------
-items <br /> [HorizontalPodAutoscaler](#horizontalpodautoscaler-v1) array | list of horizontal pod autoscaler objects.
-metadata <br /> [ListMeta](#listmeta-unversioned) | Standard list metadata.
+items <br /> *[HorizontalPodAutoscaler](#horizontalpodautoscaler-v1) array*  | list of horizontal pod autoscaler objects.
+metadata <br /> *[ListMeta](#listmeta-unversioned)*  | Standard list metadata.
 
 
 

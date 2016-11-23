@@ -22,8 +22,8 @@ Appears In <a href="#clusterrolelist-v1alpha1">ClusterRoleList</a> </aside>
 
 Field        | Description
 ------------ | -----------
-metadata <br /> [ObjectMeta](#objectmeta-v1) | Standard object's metadata.
-rules <br /> [PolicyRule](#policyrule-v1alpha1) array | Rules holds all the PolicyRules for this ClusterRole
+metadata <br /> *[ObjectMeta](#objectmeta-v1)*  | Standard object's metadata.
+rules <br /> *[PolicyRule](#policyrule-v1alpha1) array*  | Rules holds all the PolicyRules for this ClusterRole
 
 
 ### ClusterRoleList v1alpha1
@@ -32,8 +32,8 @@ rules <br /> [PolicyRule](#policyrule-v1alpha1) array | Rules holds all the Poli
 
 Field        | Description
 ------------ | -----------
-items <br /> [ClusterRole](#clusterrole-v1alpha1) array | Items is a list of ClusterRoles
-metadata <br /> [ListMeta](#listmeta-unversioned) | Standard object's metadata.
+items <br /> *[ClusterRole](#clusterrole-v1alpha1) array*  | Items is a list of ClusterRoles
+metadata <br /> *[ListMeta](#listmeta-unversioned)*  | Standard object's metadata.
 
 
 
@@ -87,19 +87,19 @@ create a ClusterRole
 
 Parameter    | Description
 ------------ | -----------
-pretty <br />  | If 'true', then the output is pretty printed.
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [ClusterRole](#clusterrole-v1alpha1) | 
+body <br /> *[ClusterRole](#clusterrole-v1alpha1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [ClusterRole](#clusterrole-v1alpha1) | OK
+200 <br /> *[ClusterRole](#clusterrole-v1alpha1)*  | OK
 
 
 ## Replace
@@ -147,20 +147,20 @@ replace the specified ClusterRole
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the ClusterRole
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the ClusterRole
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [ClusterRole](#clusterrole-v1alpha1) | 
+body <br /> *[ClusterRole](#clusterrole-v1alpha1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [ClusterRole](#clusterrole-v1alpha1) | OK
+200 <br /> *[ClusterRole](#clusterrole-v1alpha1)*  | OK
 
 
 ## Patch
@@ -208,20 +208,20 @@ partially update the specified ClusterRole
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the ClusterRole
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the ClusterRole
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Patch](#patch-unversioned) | 
+body <br /> *[Patch](#patch-unversioned)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [ClusterRole](#clusterrole-v1alpha1) | OK
+200 <br /> *[ClusterRole](#clusterrole-v1alpha1)*  | OK
 
 
 ## Delete
@@ -269,22 +269,22 @@ delete a ClusterRole
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the ClusterRole
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the ClusterRole
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [DeleteOptions](#deleteoptions-v1) | 
-gracePeriodSeconds <br />  | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-orphanDependents <br />  | Should the dependent objects be orphaned. If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list.
+body <br /> *[DeleteOptions](#deleteoptions-v1)*  | 
+gracePeriodSeconds  | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+orphanDependents  | Should the dependent objects be orphaned. If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Status](#status-unversioned) | OK
+200 <br /> *[Status](#status-unversioned)*  | OK
 
 
 ## Delete Collection
@@ -332,23 +332,23 @@ delete collection of ClusterRole
 
 Parameter    | Description
 ------------ | -----------
-pretty <br />  | If 'true', then the output is pretty printed.
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Status](#status-unversioned) | OK
+200 <br /> *[Status](#status-unversioned)*  | OK
 
 
 
@@ -401,15 +401,15 @@ read the specified ClusterRole
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the ClusterRole
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the ClusterRole
+pretty  | If 'true', then the output is pretty printed.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [ClusterRole](#clusterrole-v1alpha1) | OK
+200 <br /> *[ClusterRole](#clusterrole-v1alpha1)*  | OK
 
 
 ## List
@@ -457,23 +457,23 @@ list or watch objects of kind ClusterRole
 
 Parameter    | Description
 ------------ | -----------
-pretty <br />  | If 'true', then the output is pretty printed.
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [ClusterRoleList](#clusterrolelist-v1alpha1) | OK
+200 <br /> *[ClusterRoleList](#clusterrolelist-v1alpha1)*  | OK
 
 
 ## Watch
@@ -521,20 +521,20 @@ watch changes to an object of kind ClusterRole
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-name <br />  | name of the ClusterRole
-pretty <br />  | If 'true', then the output is pretty printed.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+name  | name of the ClusterRole
+pretty  | If 'true', then the output is pretty printed.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Event](#event-versioned) | OK
+200 <br /> *[Event](#event-versioned)*  | OK
 
 
 ## Watch List
@@ -582,19 +582,19 @@ watch individual changes to a list of ClusterRole
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-pretty <br />  | If 'true', then the output is pretty printed.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+pretty  | If 'true', then the output is pretty printed.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Event](#event-versioned) | OK
+200 <br /> *[Event](#event-versioned)*  | OK
 
 
 

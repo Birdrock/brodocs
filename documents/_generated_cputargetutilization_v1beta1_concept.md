@@ -22,7 +22,7 @@ Appears In <a href="#horizontalpodautoscalerspec-v1beta1">HorizontalPodAutoscale
 
 Field        | Description
 ------------ | -----------
-targetPercentage <br /> integer | fraction of the requested CPU that should be utilized/used, e.g. 70 means that 70% of the requested CPU should be in use.
+targetPercentage <br /> *integer*  | fraction of the requested CPU that should be utilized/used, e.g. 70 means that 70% of the requested CPU should be in use.
 
 
 

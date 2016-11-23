@@ -22,12 +22,12 @@ Appears In <a href="#deployment-v1beta1">Deployment</a> </aside>
 
 Field        | Description
 ------------ | -----------
-availableReplicas <br /> integer | Total number of available pods (ready for at least minReadySeconds) targeted by this deployment.
-conditions <br /> [DeploymentCondition](#deploymentcondition-v1beta1) array | Represents the latest available observations of a deployment's current state.
-observedGeneration <br /> integer | The generation observed by the deployment controller.
-replicas <br /> integer | Total number of non-terminated pods targeted by this deployment (their labels match the selector).
-unavailableReplicas <br /> integer | Total number of unavailable pods targeted by this deployment.
-updatedReplicas <br /> integer | Total number of non-terminated pods targeted by this deployment that have the desired template spec.
+availableReplicas <br /> *integer*  | Total number of available pods (ready for at least minReadySeconds) targeted by this deployment.
+conditions <br /> *[DeploymentCondition](#deploymentcondition-v1beta1) array*  | Represents the latest available observations of a deployment's current state.
+observedGeneration <br /> *integer*  | The generation observed by the deployment controller.
+replicas <br /> *integer*  | Total number of non-terminated pods targeted by this deployment (their labels match the selector).
+unavailableReplicas <br /> *integer*  | Total number of unavailable pods targeted by this deployment.
+updatedReplicas <br /> *integer*  | Total number of non-terminated pods targeted by this deployment that have the desired template spec.
 
 
 
@@ -82,21 +82,21 @@ replace status of the specified Deployment
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Deployment
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Deployment
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Deployment](#deployment-v1beta1) | 
+body <br /> *[Deployment](#deployment-v1beta1)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Deployment](#deployment-v1beta1) | OK
+200 <br /> *[Deployment](#deployment-v1beta1)*  | OK
 
 
 ## Patch
@@ -144,21 +144,21 @@ partially update status of the specified Deployment
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Deployment
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Deployment
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 ### Query Parameters
 
 Parameter    | Description
 ------------ | -----------
-body <br /> [Patch](#patch-unversioned) | 
+body <br /> *[Patch](#patch-unversioned)*  | 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Deployment](#deployment-v1beta1) | OK
+200 <br /> *[Deployment](#deployment-v1beta1)*  | OK
 
 
 
@@ -211,16 +211,16 @@ read status of the specified Deployment
 
 Parameter    | Description
 ------------ | -----------
-name <br />  | name of the Deployment
-namespace <br />  | object name and auth scope, such as for teams and projects
-pretty <br />  | If 'true', then the output is pretty printed.
+name  | name of the Deployment
+namespace  | object name and auth scope, such as for teams and projects
+pretty  | If 'true', then the output is pretty printed.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Deployment](#deployment-v1beta1) | OK
+200 <br /> *[Deployment](#deployment-v1beta1)*  | OK
 
 
 

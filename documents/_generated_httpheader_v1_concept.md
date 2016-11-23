@@ -22,8 +22,8 @@ Appears In <a href="#httpgetaction-v1">HTTPGetAction</a> </aside>
 
 Field        | Description
 ------------ | -----------
-name <br /> string | The header field name
-value <br /> string | The header field value
+name <br /> *string*  | The header field name
+value <br /> *string*  | The header field value
 
 
 

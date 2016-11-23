@@ -21,8 +21,8 @@ ThirdPartyResourceList is a list of ThirdPartyResources.
 
 Field        | Description
 ------------ | -----------
-items <br /> [ThirdPartyResource](#thirdpartyresource-v1beta1) array | Items is the list of ThirdPartyResources.
-metadata <br /> [ListMeta](#listmeta-unversioned) | Standard list metadata.
+items <br /> *[ThirdPartyResource](#thirdpartyresource-v1beta1) array*  | Items is the list of ThirdPartyResources.
+metadata <br /> *[ListMeta](#listmeta-unversioned)*  | Standard list metadata.
 
 
 
@@ -77,19 +77,19 @@ watch individual changes to a list of ThirdPartyResource
 
 Parameter    | Description
 ------------ | -----------
-fieldSelector <br />  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
-labelSelector <br />  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
-pretty <br />  | If 'true', then the output is pretty printed.
-resourceVersion <br />  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-timeoutSeconds <br />  | Timeout for the list/watch call.
-watch <br />  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+fieldSelector  | A selector to restrict the list of returned objects by their fields. Defaults to everything.
+labelSelector  | A selector to restrict the list of returned objects by their labels. Defaults to everything.
+pretty  | If 'true', then the output is pretty printed.
+resourceVersion  | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+timeoutSeconds  | Timeout for the list/watch call.
+watch  | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 
 
 ### Response
 
 Code         | Description
 ------------ | -----------
-200 <br /> [Event](#event-versioned) | OK
+200 <br /> *[Event](#event-versioned)*  | OK
 
 
 

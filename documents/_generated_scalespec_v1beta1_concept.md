@@ -22,7 +22,7 @@ Appears In <a href="#scale-v1beta1">Scale</a> </aside>
 
 Field        | Description
 ------------ | -----------
-replicas <br /> integer | desired number of instances for the scaled object.
+replicas <br /> *integer*  | desired number of instances for the scaled object.
 
 
 
