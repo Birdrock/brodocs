@@ -50,14 +50,15 @@ $(document).ready(function() {
         if (!prevSectionToken) {
             prevSectionToken = activeSection.token;
             currL1Nav = getNavNode(activeSection.token);
-            currL1Nav.show('slow');
+            currL1Nav.show('fast');
         } else if (activeSection.token !== prevSectionToken) {
             prevL1Nav = getNavNode(prevSectionToken);
             currL1Nav = getNavNode(activeSection.token);
-            prevL1Nav.hide('slow');
-            currL1Nav.show('slow');
+            prevL1Nav.hide('fast');
+            currL1Nav.show('fast');
             prevSectionToken = activeSection.token;
-        } else if (activeSection.subsections && (activeSection.token === prevSectionToken)) {
+        }
+        if (activeSection.subsections && (activeSection.token === prevSectionToken)) {
             activeSubSection = checkNodePositions(activeSection.subsections, tocFlat, scrollPosition);
             if (!activeSubSection) {
                 return;
@@ -65,15 +66,16 @@ $(document).ready(function() {
             if (!prevSubsectionToken) {
                 prevSubsectionToken = activeSubSection.token;
                 currL2Nav = getNavNode(activeSection.token);
-                currL2Nav.show('slow');
+                currL2Nav.show('fast');
             } else if (activeSubSection.token !== prevSubsectionToken) {
                 prevL2Nav = getNavNode(prevSubsectionToken);
                 currL2Nav = getNavNode(activeSubSection.token);
-                prevL2Nav.hide('slow');
-                currL2Nav.show('slow');
+                prevL2Nav.hide('fast');
+                currL2Nav.show('fast');
                 prevSubsectionToken = activeSubSection.token;
             }
         }
+        return {L1: prevSectionToken, L2: prevSubsectionToken}
     }
 
     var prevElemToken;
@@ -100,7 +102,7 @@ $(document).ready(function() {
             getNavElemNode(activeElemToken).addClass('selected');
             prevElemToken = activeElemToken;
         }
-        return;
+        return activeElemToken;
     }
 
     function getHeadingNode(token) {
@@ -138,7 +140,8 @@ $(document).ready(function() {
     // TODO: prevent scroll on sidebar from propogating to window
     $(window).on('scroll', function(event) {
         var scrollPosition = $(window).scrollTop();
-        scrollActions(scrollPosition);
-        checkActiveElement(flatToc, scrollPosition);;
+        var activeSectionTokens = scrollActions(scrollPosition);
+        var activeElemToken = checkActiveElement(flatToc, scrollPosition);
+        // window.location.hash = activeSectionTokens[0];
     });
 });
