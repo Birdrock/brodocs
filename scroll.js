@@ -35,25 +35,50 @@ $(document).ready(function() {
 
     var prevSectionToken;
     var prevSubsectionToken;
+    var prevElemToken;
+    var activeElemToken;
 
     function scrollActions(scrollPosition) {
         var activeSection = checkNodePositions(toc, tocFlat, scrollPosition);
-        if (!prevSectionToken && activeSection) {
+        var activeSubSection,
+            prevL1Nav,
+            currL1Nav,
+            prevL2Nav,
+            currL2Nav;
+        if (!activeSection) {
+            return;
+        }
+        if (!prevSectionToken) {
             prevSectionToken = activeSection.token;
-        } else if (activeSection && (activeSection.token !== prevSectionToken)) {
-            var currL1Nav = getNavNode(activeSection.token);
-            var prevL1Nav = getNavNode(prevSectionToken);
-            prevL1Nav.hide('fast');
-            currL1Nav.show('fast');
+        } else if (activeSection.token !== prevSectionToken) {
+            prevL1Nav = getNavNode(prevSectionToken);
+            currL1Nav = getNavNode(activeSection.token);
+            prevL1Nav.hide('slow');
+            currL1Nav.show('slow');
             prevSectionToken = activeSection.token;
-        } else if (activeSection && (activeSection.token === prevSectionToken)) {
-            var activeSubSection = checkNodePositions(activeSection.subsections, tocFlat, scrollPosition);
-            // var currL1SubNav = getNavNode()
+        } else if (activeSection.subsections && (activeSection.token === prevSectionToken)) {
+            activeSubSection = checkNodePositions(activeSection.subsections, tocFlat, scrollPosition);
+            if (!activeSubSection) {
+                return;
+            }
+            if (!prevSubsectionToken) {
+                prevSubsectionToken = activeSubSection.token;
+            } else if (activeSubSection.token !== prevSubsectionToken) {
+                prevL2Nav = getNavNode(prevSubsectionToken);
+                currL2Nav = getNavNode(activeSubSection.token);
+                prevL2Nav.hide('slow');
+                currL2Nav.show('slow');
+                prevSubsectionToken = activeSubSection.token;
+            }
         }
     }
 
     function getNavNode(token) {
         return $('#' + token + '-nav');
+    }
+
+    function getNavElemNode(token) {
+        return $('#sidebar-wrapper > ul a[href="#' + token + '"]');
     }
 
     function checkNodePositions(nodes, flatNodeMap, scrollPosition) {
@@ -63,59 +88,33 @@ $(document).ready(function() {
             var node = flatNodeMap[item.section];
             var nodeTop = node.offset().top;
             if (scrollPosition >= nodeTop) {
-                activeNode = {token: item.section, node: node, subsections: item.subsections};
+                activeNode = {token: item.section, node: node};
+                if (item.subsections) {
+                    activeNode.subsections = item.subsections;
+                }
                 break;
             }
         }
         return activeNode;
     }
-    console.log(checkNodePositions(toc, tocFlat, $(window).scrollTop()));
 
-
-//// Old stuff
-
-    // function checkScroll() {
-    //     var firstLevelTocLength = toc.length;
-    //     var scrollPosition = $(window).scrollTop();
-    //     var offset = 25;
-    //     scrollPosition += offset;
-    //     var lastSectionToken;
-    //     var prevSectionToken;
-    //     var nextSectionToken;
-
-    //     for (var i = 0; i < firstLevelTocLength; i++) {
-    //         var sectionToken = toc[i];
-    //         prevSectionToken = toc[i-1];
-    //         nextSectionToken = toc[i+1];
-    //         var currentSection = tocItems[sectionToken.section];
-    //         if (scrollPosition >= currentSection.top) {
-    //             // TODO: Revisit to only collapse previous menu to avoid having to collapse all
-    //             collapseAllNavs();
-    //             lastSectionToken = sectionToken[i];
-    //             $('#' + sectionToken.section + '-nav').show();
-    //             setActiveSubsection(sectionToken.section, sectionToken.subsections, scrollPosition);
-    //             return;
-    //         } 
-    //     }
+    // function collapseAllNavs() {
+    //     toc.forEach(function(section) {
+    //         $('#' + section.section + '-nav').hide();
+    //     });
     // }
 
-    function collapseAllNavs() {
-        toc.forEach(function(section) {
-            $('#' + section.section + '-nav').hide();
-        });
-    }
-
-    function setActiveSubsection(sectionToken, subsectionTokens, scrollPosition) {
-        for (var i = 0; i < subsectionTokens.length; i++) {
-            var currentSubSection = subsectionTokens[i];
-            var subSections = tocItems[sectionToken].subsections;
-            var subSection = subSections[currentSubSection];
-            if (scrollPosition <= subSection.top) {
-                deactivateSubsections(subsectionTokens, subSections);
-                $('#sidebar-wrapper > ul li a[href="#' + currentSubSection + '"]').addClass('selected');
-            }
-        }
-    }
+    // function setActiveSubsection(sectionToken, subsectionTokens, scrollPosition) {
+    //     for (var i = 0; i < subsectionTokens.length; i++) {
+    //         var currentSubSection = subsectionTokens[i];
+    //         var subSections = tocItems[sectionToken].subsections;
+    //         var subSection = subSections[currentSubSection];
+    //         if (scrollPosition <= subSection.top) {
+    //             deactivateSubsections(subsectionTokens, subSections);
+    //             $('#sidebar-wrapper > ul li a[href="#' + currentSubSection + '"]').addClass('selected');
+    //         }
+    //     }
+    // }
 
     function deactivateSubsections(subsectionTokens, subSections) {
         subsectionTokens.forEach(function(subsectionToken) {
@@ -124,34 +123,9 @@ $(document).ready(function() {
         });
     }
 
-
-    // function checkLocs(nodes) {
-    //     for (var node in nodes) {
-    //         if (nodes.hasOwnProperty(node)) {
-    //             var currNode = nodes[node].section;
-    //             nodes[node].top = currNode.position().top;
-    //             nodes[node].bottom = currNode.position().top + currNode.offset().top + currNode.outerHeight(true);
-    //             var subsections = nodes[node].subsections;
-
-    //             if (subsections) {
-    //                 // checkLocs(subsections);
-    //             }
-    //             // for (var subnode in subsections) {
-    //             //     var currSubNode = subsections[subnode].subsection;
-    //             //     subsections[subnode].top = currSubNode.position().top;
-    //             //     subsections[subnode].bottom = currSubNode.position().top + currSubNode.offset().top + currSubNode.outerHeight(true);
-    //             // }
-    //         }
-    //     }
-    // }
-    // checkLocs(tocItems);
-
-    // checkScroll();
-
     // TODO: prevent scroll on sidebar from propogating to window
     $(window).on('scroll', function(event) {
         var scrollPosition = $(window).scrollTop();
-        // checkScroll();
         scrollActions(scrollPosition);
     });
 });
