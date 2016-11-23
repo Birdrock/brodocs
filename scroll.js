@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     var toc = navData.toc;
-    var flatToc = navData.flatToc;
+    var flatToc = navData.flatToc.reverse();
 
     function collectNodes(tocMap) {
         var tocNodes = {};
@@ -49,6 +49,8 @@ $(document).ready(function() {
         }
         if (!prevSectionToken) {
             prevSectionToken = activeSection.token;
+            currL1Nav = getNavNode(activeSection.token);
+            currL1Nav.show('slow');
         } else if (activeSection.token !== prevSectionToken) {
             prevL1Nav = getNavNode(prevSectionToken);
             currL1Nav = getNavNode(activeSection.token);
@@ -62,6 +64,8 @@ $(document).ready(function() {
             }
             if (!prevSubsectionToken) {
                 prevSubsectionToken = activeSubSection.token;
+                currL2Nav = getNavNode(activeSection.token);
+                currL2Nav.show('slow');
             } else if (activeSubSection.token !== prevSubsectionToken) {
                 prevL2Nav = getNavNode(prevSubsectionToken);
                 currL2Nav = getNavNode(activeSubSection.token);
@@ -76,22 +80,22 @@ $(document).ready(function() {
     var activeElemToken;
 
     function checkActiveElement(items, scrollPosition) {
+        var offset = 50;
+        var offsetScroll = scrollPosition + offset;
         var visibleNode;
         for (var i = 0; i < items.length; i++) {
             var token = items[i];
             var node = getHeadingNode(token);
-            if (scrollPosition <= node.offset().top) {
+            if (offsetScroll >= node.offset().top) {
                 activeElemToken = token;
             }
         }
         if (!prevElemToken) {
-            console.log('no previous');
             getNavElemNode(activeElemToken).addClass('selected');
             prevElemToken = activeElemToken;
             return;
         }
         if (activeElemToken !== prevElemToken) {
-            console.log('now you are playing with portals');
             getNavElemNode(prevElemToken).removeClass('selected');
             getNavElemNode(activeElemToken).addClass('selected');
             prevElemToken = activeElemToken;
@@ -128,31 +132,9 @@ $(document).ready(function() {
         return activeNode;
     }
 
-    // function collapseAllNavs() {
-    //     toc.forEach(function(section) {
-    //         $('#' + section.section + '-nav').hide();
-    //     });
-    // }
-
-    // function setActiveSubsection(sectionToken, subsectionTokens, scrollPosition) {
-    //     for (var i = 0; i < subsectionTokens.length; i++) {
-    //         var currentSubSection = subsectionTokens[i];
-    //         var subSections = tocItems[sectionToken].subsections;
-    //         var subSection = subSections[currentSubSection];
-    //         if (scrollPosition <= subSection.top) {
-    //             deactivateSubsections(subsectionTokens, subSections);
-    //             $('#sidebar-wrapper > ul li a[href="#' + currentSubSection + '"]').addClass('selected');
-    //         }
-    //     }
-    // }
-
-    function deactivateSubsections(subsectionTokens, subSections) {
-        subsectionTokens.forEach(function(subsectionToken) {
-            var subsection = subSections[subsectionToken];
-            $('#sidebar-wrapper > ul li a[href="#' + subsectionToken + '"]').removeClass('selected');
-        });
-    }
-
+    var scrollPosition = $(window).scrollTop();
+    scrollActions(scrollPosition);
+    checkActiveElement(flatToc, scrollPosition);
     // TODO: prevent scroll on sidebar from propogating to window
     $(window).on('scroll', function(event) {
         var scrollPosition = $(window).scrollTop();
