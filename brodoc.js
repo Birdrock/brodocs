@@ -165,7 +165,9 @@ function generateNavItems(navObjs) {
     var navSectionArray = [];
     var navStrongSectionArray = [];
     var navSectionArrayClone;
+    var flatNavArrayInvert = [];
     reversedNavs.forEach(obj => {
+        flatNavArrayInvert.push(obj.id);
         var strong = (obj.id.indexOf('-strong-') !== -1);
         if (obj.level !== 1) {
             if (strong && currentNestArray.length !== 0) {
@@ -174,7 +176,6 @@ function generateNavItems(navObjs) {
                 currentNestArray.length = 0;
 
                 navSectionArrayClone = Object.assign([], navSectionArray);
-                console.log("$$$$$$    ", navSectionArray);
                 navStrongSectionArray.push({section: obj.id, subsections: navSectionArrayClone});
                 navSectionArray.length = 0;
             } else {
@@ -206,7 +207,7 @@ function generateNavItems(navObjs) {
     });
     
     var navContent = flattenContent(nestedNavArray.reverse());
-    return {content: navContent, navDataArray: {toc: navArrayInvert}};
+    return {content: navContent, navDataArray: {toc: navArrayInvert, flatToc: flatNavArrayInvert}};
 }
 
 function generateNav(obj) {
@@ -265,7 +266,6 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <div id="page-content-wrapper" class="body-content container-fluid">${bodyContent}</div>
 </div>
 <script src="jquery-3.1.1.min.js"></script>
-<script src="jquery.visible.min.js"></script>
 <script src="navData.js"></script>
 <script src="scroll.js"></script>
 <!--<script src="actions.js"></script>-->

@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     var toc = navData.toc;
+    var flatToc = navData.flatToc;
 
     function collectNodes(tocMap) {
         var tocNodes = {};
@@ -35,8 +36,6 @@ $(document).ready(function() {
 
     var prevSectionToken;
     var prevSubsectionToken;
-    var prevElemToken;
-    var activeElemToken;
 
     function scrollActions(scrollPosition) {
         var activeSection = checkNodePositions(toc, tocFlat, scrollPosition);
@@ -71,6 +70,37 @@ $(document).ready(function() {
                 prevSubsectionToken = activeSubSection.token;
             }
         }
+    }
+
+    var prevElemToken;
+    var activeElemToken;
+
+    function checkActiveElement(items, scrollPosition) {
+        var visibleNode;
+        for (var i = 0; i < items.length; i++) {
+            var token = items[i];
+            var node = getHeadingNode(token);
+            if (scrollPosition <= node.offset().top) {
+                activeElemToken = token;
+            }
+        }
+        if (!prevElemToken) {
+            console.log('no previous');
+            getNavElemNode(activeElemToken).addClass('selected');
+            prevElemToken = activeElemToken;
+            return;
+        }
+        if (activeElemToken !== prevElemToken) {
+            console.log('now you are playing with portals');
+            getNavElemNode(prevElemToken).removeClass('selected');
+            getNavElemNode(activeElemToken).addClass('selected');
+            prevElemToken = activeElemToken;
+        }
+        return;
+    }
+
+    function getHeadingNode(token) {
+        return $('#' + token);
     }
 
     function getNavNode(token) {
@@ -127,5 +157,6 @@ $(document).ready(function() {
     $(window).on('scroll', function(event) {
         var scrollPosition = $(window).scrollTop();
         scrollActions(scrollPosition);
+        checkActiveElement(flatToc, scrollPosition);;
     });
 });
