@@ -211,7 +211,12 @@ function generateNavItems(navObjs) {
 }
 
 function generateNav(obj) {
-    return '<li class="nav-level-' + obj.level + '">' + '<a href="#' + obj.id + '" class="nav-item">' + obj.text + '</a></li>';
+    var classString = 'nav-level-' + obj.level;
+    var isStrong = obj.id.indexOf('-strong-') !== -1;
+    if (isStrong) {
+        classString += ' strong-nav';
+    }
+    return '<li class="' + classString + '">' + '<a href="#' + obj.id + '" class="nav-item">' + obj.text + '</a></li>';
 }
 
 function generateNestedNav(parent, nest) {
