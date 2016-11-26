@@ -1,7 +1,7 @@
 /* Github CSS overrides */
 ul, li {
-    margin: 0;
-    padding-left: 10px
+    margin-left: 10px;
+    padding-left: 0
 }
 
 /* Slate CSS */
@@ -104,8 +104,17 @@ ul, li {
 
 /* Brodoc CSS */
 
-#wrapper {
+/* Kubernetes colors */
+/*
+kubernetes blue - rgb(50, 109, 230)
+dark blue - rgb(51, 113, 227)
+dark grey - rgb(48, 48, 48)
+light grey - rgb(161, 160, 158)
+*/
+
+body > #wrapper {
     display: block;
+    padding-bottom: 500px;
 }
 
 #sidebar-wrapper {
@@ -137,8 +146,9 @@ ul, li {
 
 #sidebar-wrapper a.selected {
     font-style: bold;
-    border: 1px solid black;
-    background-color: lightblue;
+    color: whitesmoke;
+    border: 1px solid rgb(161, 160, 158);
+    background-color: rgb(51, 113, 227);
     border-radius: 5px;
 }
 
@@ -166,7 +176,7 @@ ul, li {
 
 body {
     /*height: 100%;*/
-    background: linear-gradient(90deg, #FFFFFF 63%, dimgrey 37%);
+    background: linear-gradient(90deg, #FFFFFF 63%, rgb(48, 48, 48) 37%);
 }
 
 .body-content h1, .body-content h2 {
@@ -176,7 +186,7 @@ body {
     /*border-image: linear-gradient(90deg, dimgrey 65%, #FFFFFF 35%);*/
 }
 
-.body-content > h3, .body-content > h4, .body-content > h5, .body-content > h6, .body-content > p, .body-content > aside, .body-content > ul > li {
+.body-content > h3, .body-content > h4, .body-content > h5, .body-content > h6, .body-content > p, .body-content > aside, .body-content > ul > li, .body-content > ul > li {
     width: 45%;
     padding-top: 20px;
 }
@@ -200,11 +210,16 @@ body {
     text-overflow: ellipsis;
     display: inline-block;
     font-size: smaller;
+    word-break: break-word;
 }
 
 .body-content blockquote {
     border-left: 0;
     border-radius: 5px;
+}
+
+.body-content pre.code-block {
+    margin-bottom: 80px;
 }
 
 .body-content blockquote p, .body-content pre {
@@ -240,32 +255,26 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    /*background-color: dimgrey;*/
-    /*border: 3px solid darkgrey;*/
 }
 
 #code-tabs-wrapper .code-tab-list {
     float: right;
-    /*background-color: darkgrey;
-    border: 3px solid darkgrey;*/
-    /*border-radius: 5px;*/
     margin-top: 0;
     padding: 0 10px;
 }
 
 #code-tabs-wrapper .code-tab {
-    color: black;
+    color: white;
     display: inline-block;
     padding: 0 30px;
-    background: grey;
-    border: 1px solid lightblue;
+    background: rgb(48, 48, 48);
+    border: 1px solid rgb(161, 160, 158);
     border-radius: 5px;
 }
 
 #code-tabs-wrapper .tab-selected {
+    background: rgb(51, 113, 227);
     font-style: bold;
-    background: lightblue;
-    border: 1px solid lightblue;
     border-radius: 5px;
 }
 

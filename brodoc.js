@@ -259,9 +259,9 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <title>${config.title}</title>
 <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./node_modules/highlight.js/styles/default.css" type="text/css">
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="node_modules/highlight.js/styles/default.css" type="text/css">
 <link rel="stylesheet" href="stylesheet.css" type="text/css">
 </head>
 <body>
@@ -270,7 +270,7 @@ function generateDoc(navContent, bodyContent, codeTabContent) {
 <div id="code-tabs-wrapper" class="code-tabs"><ul class="code-tab-list">${codeTabContent}</ul></div>
 <div id="page-content-wrapper" class="body-content container-fluid">${bodyContent}</div>
 </div>
-<script src="jquery-3.1.1.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="navData.js"></script>
 <script src="scroll.js"></script>
 <!--<script src="actions.js"></script>-->
