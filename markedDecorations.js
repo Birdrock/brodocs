@@ -1,10 +1,17 @@
 ;(function() {
     var brodocDec = {};
 
+    var navIds = [];
+    var bodyContent = '';
+    var codeTabs = [];
+
+    var idAffix = 0;
+    var uniqueNav = [];
+
     brodocDec.decorateMarked = function(renderer) {
         renderer.heading = (text, level, raw) => {
             var id = raw.toLowerCase().replace(/[^\w]+/g, '-');
-            if ((uniqueNav.indexOf(id) !== -1) && (level > 1)) {
+            if ((uniqueNav.indexOf(id) !== -1) && (level === 2)) {
                 idAffix++;
                 id += '-' + idAffix;
             } else {
@@ -85,6 +92,9 @@
     } else {
         this.brodocDec = brodocDec;
     }
+    brodocDec.navIds = navIds;
+    brodocDec.codeTabs = codeTabs;
+    return brodocDec;
 
 }).call(function() {
   return this || (typeof window !== 'undefined' ? window : global);
