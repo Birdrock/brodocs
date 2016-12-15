@@ -58,7 +58,6 @@ $(document).ready(function() {
             currL1Nav = getNavNode(activeSection.token);
             prevL1Nav.hide('fast');
             currL1Nav.show('fast');
-            scrollToNav(activeSection.token);
             prevSectionToken = activeSection.token;
         }
         if (activeSection.subsections && activeSection.subsections.length !== 0) {
@@ -154,7 +153,7 @@ $(document).ready(function() {
     $(window).on('hashchange', function(event) {
         var scrollPosition = $(window).scrollTop();
         var activeSectionTokens = scrollActions(scrollPosition);
-        scrollToNav(activeSectionTokens.L1);
+        // scrollToNav(activeSectionTokens.L1);
         var token = location.hash.slice(1);
     });
 
