@@ -40,7 +40,6 @@ $(document).ready(function() {
 
     function scrollActions(scrollPosition) {
         var activeSection = checkNodePositions(toc, tocFlat, scrollPosition);
-        console.log(activeSection);
         var activeSubSection,
             prevL1Nav,
             currL1Nav,
@@ -82,7 +81,6 @@ $(document).ready(function() {
         }
         activeTokensObj.L1 = prevSectionToken;
         activeTokensObj.L2 = prevSubsectionToken;
-        console.log(activeTokensObj);
         return activeTokensObj;
     }
 
