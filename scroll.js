@@ -40,6 +40,7 @@ $(document).ready(function() {
 
     function scrollActions(scrollPosition) {
         var activeSection = checkNodePositions(toc, tocFlat, scrollPosition);
+        console.log(activeSection);
         var activeSubSection,
             prevL1Nav,
             currL1Nav,
@@ -81,6 +82,7 @@ $(document).ready(function() {
         }
         activeTokensObj.L1 = prevSectionToken;
         activeTokensObj.L2 = prevSubsectionToken;
+        console.log(activeTokensObj);
         return activeTokensObj;
     }
 
@@ -128,7 +130,7 @@ $(document).ready(function() {
         for (var i = 0; i < nodes.length; i++) {
             var item = nodes[i];
             var node = flatNodeMap[item.section];
-            var nodeTop = node.offset().top;
+            var nodeTop = node.offset().top - 50;
             if (scrollPosition >= nodeTop) {
                 activeNode = {token: item.section, node: node};
 
