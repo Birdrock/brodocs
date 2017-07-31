@@ -1,1 +1,5 @@
 node_modules
+documents
+.vscode/
+manifest*.json
+navData.js
