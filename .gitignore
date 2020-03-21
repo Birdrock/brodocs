@@ -3,3 +3,4 @@ documents
 .vscode/
 manifest*.json
 navData.js
+.idea/
