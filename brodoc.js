@@ -72,7 +72,12 @@ function flattenContent(content) {
 var parsedContentArray = [];
 function parseFileContent(files) {
     files.forEach((file, index) => {
-        parsedContentArray[index] = parseDoc(file.content);
+        try {
+          parsedContentArray[index] = parseDoc(file.content);
+        } catch(e) {
+          console.log(e, file.filename, file.content);
+          throw e;
+        }
     });
 }
 function parseDoc(doc) {
